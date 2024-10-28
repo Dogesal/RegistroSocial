@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+
+        </div>*@
+
+    <!-- Menú de navegación fijo en la parte superior -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Menú de Navegación con ancho de columna 4 -->
+            <nav class="col-3 navbar navbar-expand-lg navbar-dark" style="background-color: #39A6A3; min-height: 100vh;">
+                <div class="container-fluid">
+                    <a class="navbar-brand fw-bold" href="#">REGISTRO SOCIAL</a>
+                    <button class="navbar-toggler"
+                            type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between w-100">
+                            <li class="nav-item">
+                                @Html.ActionLink("Registro Social", "Registro", "RegistroSocial", new { area = "" }, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                @Html.ActionLink("Búsqueda", "Busqueda", "RegistroSocial", new { area = "" }, new { @class = "nav-link" })
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2"
+                                   type="search"
+                                   placeholder="Buscar"
+                                   aria-label="Search">
+                            <button class="btn btn-outline-light" type="submit">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Contenido Principal con ancho de columna 8 -->
+            <main class="col-9 p-4" role="main" aria-labelledby="main-heading">
+                <h1 id="main-heading" class="visually-hidden">Contenido Principal de Registro Social</h1>
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
