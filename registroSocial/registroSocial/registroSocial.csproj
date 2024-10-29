@@ -104,11 +104,14 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\Paciente.js" />
     <Content Include="Scripts\registroSocial.js" />
+    <Content Include="Scripts\responsable.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\PacienteController.cs" />
     <Compile Include="Controllers\RegistroSocialController.cs" />
+    <Compile Include="Controllers\ResponsableController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -126,7 +129,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\RegistroSocial\Registro.cshtml" />
     <Content Include="Views\RegistroSocial\Busqueda.cshtml" />
-    <Content Include="Views\RegistroSocial\Pacien.cshtml" />
+    <Content Include="Views\Paciente\DatosPaciente.cshtml" />
+    <Content Include="Views\Responsable\DatosResponsable.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

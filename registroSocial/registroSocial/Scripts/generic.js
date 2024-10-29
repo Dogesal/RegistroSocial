@@ -1,10 +1,34 @@
-﻿function pintar(objPintar) {
+﻿function pintar(objPintar,objBuscar) {
 
-    fetch(objPintar.url)
+
+
+    var raiz = document.getElementById("idRaiz").value;
+    var raizAbsoluta = window.location.protocol + "//" + window.location.host +
+        raiz+objPintar.url
+
+    console.log(raizAbsoluta)
+
+    fetch(raizAbsoluta)
         .then(res => res.json())
         .then(res => {
+
+            let contenido = "";
+
+            if (objBuscar != undefined && objBuscar.busqueda == true){
+        contenido =`<div class="input-group">
+                      <div class="form-outline" data-mdb-input-init>
+                        <input type="search" id="${objBuscar.id}" class="form-control" />
+                        <label class="form-label" for="form1">${objBuscar.placeholder}</label>
+                      </div>
+                      <button type="button" class="btn btn-primary" onclick="filtrarPaciente()">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>`
+             }
+
+
             // Inicio de la tabla
-            let contenido = "<table class='table'>";
+            contenido += "<table class='table'>";
             contenido += "<tr>";
             for (let j = 0; j < objPintar.cabezeras.length; j++) {
                 contenido += "<th>" + objPintar.cabezeras[j] + "</th>";

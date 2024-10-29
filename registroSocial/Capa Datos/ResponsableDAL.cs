@@ -12,7 +12,7 @@ namespace Capa_Datos
     public class ResponsableDAL:CadenaDAL
     {
 
-        public List<ResponsableCLS> listarRegistroSocial()
+        public List<ResponsableCLS> listarResponsable()
         {
             List<ResponsableCLS> lista = null;
 
@@ -42,13 +42,13 @@ namespace Capa_Datos
 
                                 registro.IDPaciente = drd["ID_responsable"] != DBNull.Value ? (int)drd["ID_responsable"] : 0;
                                 registro.IDPaciente = drd["ID_paciente"] != DBNull.Value ? (int)drd["ID_paciente"]: 0;
-                                registro.NombreResponsable = drd["edad"] != DBNull.Value ? drd["edad"].ToString() : "";
-                                registro.Edad = drd["DNI"] != DBNull.Value ? (int)drd["DNI"] : 0;
-                                registro.DNI = drd["ocupacion"] != DBNull.Value ? drd["ocupacion"].ToString() : "";
-                                registro.Ocupacion = drd["cama"] != DBNull.Value ? drd["cama"].ToString() : "";
-                                registro.Parentesco = drd["modalidad_ingreso"] != DBNull.Value ? drd["modalidad_ingreso"].ToString() : "";
-                                registro.CelularResponsable = drd["tipo_familia"] != DBNull.Value ? drd["tipo_familia"].ToString() : "";
-                                registro.GradoInstruccion = drd["observaciones_familia"] != DBNull.Value ? drd["observaciones_familia"].ToString() : "";
+                                registro.NombreResponsable = drd["nombre_responsable"] != DBNull.Value ? drd["nombre_responsable"].ToString() : "";
+                                registro.Edad = drd["edad"] != DBNull.Value ? (int)drd["edad"] : 0;
+                                registro.DNI = drd["DNI"] != DBNull.Value ? drd["DNI"].ToString() : "";
+                                registro.Ocupacion = drd["ocupacion"] != DBNull.Value ? drd["ocupacion"].ToString() : "";
+                                registro.Parentesco = drd["parentesco"] != DBNull.Value ? drd["parentesco"].ToString() : "";
+                                registro.CelularResponsable = drd["celular_responsable"] != DBNull.Value ? drd["celular_responsable"].ToString() : "";
+                                registro.GradoInstruccion = drd["grado_instruccion"] != DBNull.Value ? drd["grado_instruccion"].ToString() : "";
                                 
                                 // Agregar el registro a la lista
                                 lista.Add(registro);

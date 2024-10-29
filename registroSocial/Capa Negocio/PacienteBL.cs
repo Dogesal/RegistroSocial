@@ -16,5 +16,13 @@ namespace Capa_Negocio
             return PacienteDAL.listarPaciente();
 
         }
+
+        public List<PacienteCLS> filtrarPaciente(string parametro)
+        {
+            PacienteDAL PacienteDAL = new PacienteDAL();
+
+            return PacienteDAL.filtrarPaciente(parametro);
+
+        }
     }
 }

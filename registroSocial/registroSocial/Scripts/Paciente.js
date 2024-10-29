@@ -7,10 +7,48 @@ window.onload = function (){
 
 function listarPacientes() {
 
+ 
     pintar({
-        url: "RegistroSocial/pacientes",
+        url: "/Paciente/listarPacientes",
         id: "tablaBusquedaPaciente",
-        cabezeras: ["ID Paciente", "Fecha Aplicación", "Fecha Ingreso", "Servicio", "Cama", "Modalidad Ingreso", "Tipo Familia", "Observaciones Familia", "Acciones Realizadas", "Diagnóstico Social"],
-        propiedades: ["IDPaciente", "FechaAplicacion", "FechaIngreso", "Servicio", "Cama", "ModalidadIngreso", "TipoFamilia", "ObservacionesFamilia", "AccionesRealizadas", "DiagnosticoSocial"]
-    })
+        cabezeras: [
+            "NombrePaciente",
+            "DNI",
+            "Edad",
+            "EstadoCivil",
+            "GradoInstruccion",
+            "Direccion",
+            "CelularPaciente",
+            "Ocupacion",
+            "NumHijos",
+            "NumHermanos",
+            "Seguro",
+            "DxMedico"
+        ],
+        propiedades: [
+            "NombrePaciente",
+            "DNI",
+            "Edad",
+            "EstadoCivil",
+            "GradoInstruccion",
+            "Direccion",
+            "CelularPaciente",
+            "Ocupacion",
+            "NumHijos",
+            "NumHermanos",
+            "Seguro",
+            "DxMedico"
+        ]
+    }, {
+            buscar: true,
+            id: "filtrarPaciente",
+            placeholder:"Buscar Paciente"
+
+
+        })
+
+
+
+
+
 }

@@ -28,11 +28,7 @@ namespace registroSocial.Controllers
             return View();
         }
 
-        // GET: RegistroSocial
-        public ActionResult Pacien()
-        {
-            return View();
-        }
+        
 
         public JsonResult registroSocial()
         {
@@ -41,12 +37,6 @@ namespace registroSocial.Controllers
             return Json(obj.listarRegistroSocial(),JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult pacientes()
-        {
-            PacienteBL obj = new PacienteBL();
-
-            return Json(obj.listarPaciente(), JsonRequestBehavior.AllowGet);
-        }
     }
 
 
