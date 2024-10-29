@@ -9,7 +9,7 @@ function listarPacientes() {
 
  
     pintar({
-        url: "/Paciente/listarPacientes",
+        url: "Paciente/listarPacientes",
         id: "tablaBusquedaPaciente",
         cabezeras: [
             "NombrePaciente",
@@ -42,13 +42,15 @@ function listarPacientes() {
     }, {
             buscar: true,
             id: "filtrarPaciente",
-            placeholder:"Buscar Paciente"
-
+            placeholder:"Buscar Paciente",
+            url: "Paciente/filtrarPacientes",
+            parametro:"parametro"
 
         })
 
-
-
-
-
 }
+
+
+
+
+

@@ -37,6 +37,14 @@ namespace registroSocial.Controllers
             return Json(obj.listarRegistroSocial(),JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult filtrarregistroSocial(string parametro)
+        {
+            RegistroSocialBL obj = new RegistroSocialBL();
+
+            return Json(obj.filtrarRegistroSocial(parametro), JsonRequestBehavior.AllowGet);
+        }
+
+
     }
 
 

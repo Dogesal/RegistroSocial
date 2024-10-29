@@ -19,7 +19,13 @@ namespace Capa_Negocio
 
         }
 
+        public List<RegistroSocialCLS> filtrarRegistroSocial(string parametro)
+        {
+            RegistroSocialDAL registroSocialDAL = new RegistroSocialDAL();
 
+            return registroSocialDAL.filtrarRegistroSocial(parametro);
+
+        }
 
     }
 }

@@ -68,6 +68,64 @@ namespace Capa_Datos
     return lista;
 }
 
+        public List<RegistroSocialCLS> filtrarRegistroSocial(string parametro)
+        {
+            List<RegistroSocialCLS> lista = null;
+
+
+
+            using (SqlConnection cn = new SqlConnection(cadenaConexion))
+            {
+                try
+                {
+                    cn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("spFiltrarDatosGenerales", cn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@parametro", parametro);
+                        SqlDataReader drd = cmd.ExecuteReader();
+
+
+                        if (drd != null)
+                        {
+                            lista = new List<RegistroSocialCLS>();
+
+                            while (drd.Read())
+                            {
+                                RegistroSocialCLS registro = new RegistroSocialCLS();
+
+                                // Asignación de columnas a las propiedades de RegistroSocialCLS
+                                registro.IDRegistroSocial = drd["ID_datos_generales"] != DBNull.Value ? (int)drd["ID_datos_generales"] : 0;
+                                registro.IDPaciente = drd["ID_paciente"] != DBNull.Value ? (int)drd["ID_paciente"] : 0;
+                                registro.FechaAplicacion = drd["fecha_aplicacion"] != DBNull.Value ? (DateTime)drd["fecha_aplicacion"] : DateTime.MinValue;
+                                registro.FechaIngreso = drd["fecha_ingreso"] != DBNull.Value ? (DateTime)drd["fecha_ingreso"] : DateTime.MinValue;
+                                registro.Servicio = drd["servicio"] != DBNull.Value ? drd["servicio"].ToString() : "";
+                                registro.Cama = drd["cama"] != DBNull.Value ? drd["cama"].ToString() : "";
+                                registro.ModalidadIngreso = drd["modalidad_ingreso"] != DBNull.Value ? drd["modalidad_ingreso"].ToString() : "";
+                                registro.TipoFamilia = drd["tipo_familia"] != DBNull.Value ? drd["tipo_familia"].ToString() : "";
+                                registro.ObservacionesFamilia = drd["observaciones_familia"] != DBNull.Value ? drd["observaciones_familia"].ToString() : "";
+                                registro.AccionesRealizadas = drd["acciones_realizadas"] != DBNull.Value ? drd["acciones_realizadas"].ToString() : "";
+                                registro.DiagnosticoSocial = drd["diagnostico_social"] != DBNull.Value ? drd["diagnostico_social"].ToString() : "";
+
+                                // Agregar el registro a la lista
+                                lista.Add(registro);
+                            }
+                        }
+                    }
+
+                    cn.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error: " + e.Message);
+                    cn.Close();
+                }
+            }
+
+            return lista;
+        }
+
     }
 }
 //lista.Add(new RegistroSocialCLS

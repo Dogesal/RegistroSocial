@@ -9,7 +9,7 @@ function listarResponsables() {
 
 
     pintar({
-        url: "/Responsable/listarResponsables", 
+        url: "Responsable/listarResponsables", 
         id: "tablaBusquedaResposable",
         cabezeras: [
 
@@ -31,7 +31,15 @@ function listarResponsables() {
             "CelularResponsable",
             "GradoInstruccion"
         ]
-    })
+    }, {
+
+            buscar: true,
+            id: "filtrarResponsable",
+            placeholder: "Buscar Responsable",
+            url: "Responsable/filtrarResponsables",
+            parametro: "parametro"
+
+        })
 
 
 

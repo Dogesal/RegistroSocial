@@ -17,5 +17,13 @@ namespace Capa_Negocio
             return registroSocialDAL.listarResponsable();
 
         }
+
+        public List<ResponsableCLS> filtrarResponsable(string parametro)
+        {
+            ResponsableDAL registroSocialDAL = new ResponsableDAL();
+
+            return registroSocialDAL.filtrarResponsable(parametro);
+
+        }
     }
 }

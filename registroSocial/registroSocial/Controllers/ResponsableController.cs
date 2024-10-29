@@ -23,6 +23,14 @@ namespace registroSocial.Controllers
             return Json(responsableBL.listarResponsable(), JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult filtrarResponsables(string parametro)
+        {
+
+            ResponsableBL responsableBL = new ResponsableBL();
+
+            return Json(responsableBL.filtrarResponsable(parametro), JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult DatosResponsable() {
 
 
