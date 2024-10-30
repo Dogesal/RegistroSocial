@@ -42,8 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PacienteCLS.cs" />
-    <Compile Include="RegistroSocialCLS.cs" />
+    <Compile Include="DatosGeneralesCLS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroSocialCLS.cs" />
     <Compile Include="ResponsableCLS.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

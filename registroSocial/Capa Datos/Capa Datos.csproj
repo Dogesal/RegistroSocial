@@ -44,8 +44,9 @@
   <ItemGroup>
     <Compile Include="CadenaDAL.cs" />
     <Compile Include="PacienteDAL.cs" />
-    <Compile Include="RegistroSocialDAL.cs" />
+    <Compile Include="DatosGeneralesDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroSocialDAL.cs" />
     <Compile Include="ResponsableDAL.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -42,8 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PacienteBL.cs" />
-    <Compile Include="RegistroSocialBL.cs" />
+    <Compile Include="DatosGeneralesBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistroSocialBL.cs" />
     <Compile Include="ResponsableBL.cs" />
   </ItemGroup>
   <ItemGroup>
