@@ -34,38 +34,35 @@
         </div>*@
 
     <!-- Menú de navegación fijo en la parte superior -->
-    <div class="container-fluid">
-        <div class="row">
+    <div class="fluid">
+        <div class="">
             <!-- Menú de Navegación con ancho de columna 4 -->
-            <nav class="col-3 navbar navbar-expand-lg navbar-dark" style="background-color: #39A6A3; min-height: 100vh;">
-                <div class="container-fluid">
-                    <a class="navbar-brand fw-bold" href="#">REGISTRO SOCIAL</a>
+            <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #39A6A3; height:auto ; width:100%">
+                <div class="container">
+                    <a class="navbar-brand fw-bold" href="#">FICHA DE REGISTRO SOCIAL</a>
                     <button class="navbar-toggler"
                             type="button">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse " id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between w-100">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end w-100">
                             <li class="nav-item">
-                                @Html.ActionLink("Registro Social", "Registro", "DatosGenerales", new { area = "" }, new { @class = "nav-link" })
+                                @Html.ActionLink("Nuevo Registro", "Registro", "DatosGenerales", new { area = "" }, new { @class = "nav-link" })
+                            </li>
+                            <li class="nav-item">
+                                <div class = "nav-link"> | </div>
                             </li>
                             <li class="nav-item">
                                 @Html.ActionLink("Búsqueda", "Busqueda", "DatosGenerales", new { area = "" }, new { @class = "nav-link" })
                             </li>
                         </ul>
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2"
-                                   type="search"
-                                   placeholder="Buscar"
-                                   aria-label="Search">
-                            <button class="btn btn-outline-light" type="submit">Buscar</button>
-                        </form>
+                        
                     </div>
                 </div>
             </nav>
 
             <!-- Contenido Principal con ancho de columna 8 -->
-            <main class="col-9 p-4" role="main" aria-labelledby="main-heading">
+            <main class="" style="padding-left:100px;padding-right:100px; padding-top:50px;border-color:aqua ; border-radius:3px 4px" role="main" aria-labelledby="main-heading">
                 <h1 id="main-heading" class="visually-hidden">Contenido Principal de Registro Social</h1>
                 @RenderBody()
             </main>

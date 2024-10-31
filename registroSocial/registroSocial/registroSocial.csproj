@@ -133,6 +133,7 @@
     <Content Include="Views\Paciente\DatosPaciente.cshtml" />
     <Content Include="Views\Responsable\DatosResponsable.cshtml" />
     <Content Include="Views\RegistroSocial\Index.cshtml" />
+    <Content Include="Views\RegistroSocial\RegistroSocial.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -24,5 +24,13 @@ namespace registroSocial.Controllers
 
             return Json(registroBL.registroSocial(id), JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult RegistroSocial()
+        {
+
+
+            return View();
+
+        }
     }
 }

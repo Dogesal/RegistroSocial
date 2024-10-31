@@ -1,4 +1,4 @@
-@charset "UTF-8"; /*!
+ï»¿@charset "UTF-8"; /*!
  * Bootstrap v5.0.2 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
@@ -534,7 +534,7 @@ progress {
 }
 
     .blockquote-footer::before {
-        content: "— "
+        content: "ï¿½ "
     }
 
 .img-fluid {
@@ -2077,7 +2077,7 @@ progress {
 .form-control {
     display: block;
     width: 100%;
-    padding: .375rem .75rem;
+    padding: .175rem .75rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -2281,7 +2281,7 @@ textarea.form-control-lg {
 .form-select {
     display: block;
     width: 100%;
-    padding: .375rem 2.25rem .375rem .75rem;
+    padding: .175rem 2.25rem .375rem .75rem;
     -moz-padding-start: calc(0.75rem - 3px);
     font-size: 1rem;
     font-weight: 400;
