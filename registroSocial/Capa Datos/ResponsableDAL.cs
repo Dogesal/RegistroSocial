@@ -68,6 +68,85 @@ namespace Capa_Datos
             return lista;
         }
 
+        public int agregarResponsable(ResponsableCLS responsable)
+        {
+            int filasAfectadas = 0;
+
+            using (SqlConnection cn = new SqlConnection(cadenaConexion))
+            {
+                try
+                {
+                    cn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("sp_AddResponsable", cn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Agrega los parámetros requeridos para el procedimiento almacenado "sp_AddResponsable"
+                        cmd.Parameters.AddWithValue("@ID_paciente", responsable.IDPaciente);
+                        cmd.Parameters.AddWithValue("@nombre_responsable", responsable.NombreResponsable);
+                        cmd.Parameters.AddWithValue("@edad", responsable.Edad);
+                        cmd.Parameters.AddWithValue("@DNI", responsable.DNI);
+                        cmd.Parameters.AddWithValue("@ocupacion", responsable.Ocupacion);
+                        cmd.Parameters.AddWithValue("@parentesco", responsable.Parentesco);
+                        cmd.Parameters.AddWithValue("@celular_responsable", responsable.CelularResponsable);
+                        cmd.Parameters.AddWithValue("@grado_instruccion", responsable.GradoInstruccion);
+
+                        // Ejecuta el comando sin esperar un resultado de lectura
+                        filasAfectadas=cmd.ExecuteNonQuery();
+                    }
+
+                    cn.Close();
+                    return filasAfectadas;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error: " + e.Message);
+                    return filasAfectadas;
+                }
+            }
+        }
+
+        public int editarResponsable(ResponsableCLS responsable)
+        {
+            int filasAfectadas = 0;
+
+            using (SqlConnection cn = new SqlConnection(cadenaConexion))
+            {
+                try
+                {
+                    cn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("sp_EditResponsable", cn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        // Agrega los parámetros requeridos para el procedimiento almacenado "sp_EditResponsable"
+                        cmd.Parameters.AddWithValue("@id", responsable.IDResponsable);
+                        cmd.Parameters.AddWithValue("@ID_paciente", responsable.IDPaciente);
+                        cmd.Parameters.AddWithValue("@nombre_responsable", responsable.NombreResponsable);
+                        cmd.Parameters.AddWithValue("@edad", responsable.Edad);
+                        cmd.Parameters.AddWithValue("@DNI", responsable.DNI);
+                        cmd.Parameters.AddWithValue("@ocupacion", responsable.Ocupacion);
+                        cmd.Parameters.AddWithValue("@parentesco", responsable.Parentesco);
+                        cmd.Parameters.AddWithValue("@celular_responsable", responsable.CelularResponsable);
+                        cmd.Parameters.AddWithValue("@grado_instruccion", responsable.GradoInstruccion);
+
+                        // Ejecuta el comando sin esperar un resultado de lectura
+                        filasAfectadas= cmd.ExecuteNonQuery();
+                    }
+
+                    cn.Close();
+                    return filasAfectadas;
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error: " + e.Message);
+                    return filasAfectadas;
+                }
+            }
+        }
+
 
         public List<ResponsableCLS> filtrarResponsable(string parametro)
         {

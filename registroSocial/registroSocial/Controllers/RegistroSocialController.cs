@@ -25,10 +25,17 @@ namespace registroSocial.Controllers
             return Json(registroBL.registroSocial(id), JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult RegistroSocial()
+        public JsonResult guardarRegistroSocial(RegistroSocialCLS registro)
         {
 
+            RegistroSocialBL registroBL = new RegistroSocialBL();
 
+            return Json(registroBL.guardadRegistroSocial(registro), JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult RegistroSocial()
+        {
+            
             return View();
 
         }

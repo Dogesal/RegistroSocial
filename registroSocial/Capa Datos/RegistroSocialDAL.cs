@@ -202,5 +202,119 @@ namespace Capa_Datos
 
         }
 
+        public string AgregarRegistroSocial(RegistroSocialCLS registroSocial)
+        {
+            string GUARDADO="";
+            int idpaciente;
+            using (SqlConnection cn = new SqlConnection(cadenaConexion))
+            {
+                try
+                {
+                    cn.Open();
+                    SqlTransaction transaction = cn.BeginTransaction();
+
+                    // Agregar Paciente
+                    int pacienteId;
+                    using (SqlCommand cmdPaciente = new SqlCommand("sp_AddPaciente", cn, transaction))
+                    {
+                        cmdPaciente.CommandType = CommandType.StoredProcedure;
+
+                        cmdPaciente.Parameters.AddWithValue("@nombre_paciente", registroSocial.paciente.NombrePaciente);
+                        cmdPaciente.Parameters.AddWithValue("@DNI", registroSocial.paciente.DNI);
+                        cmdPaciente.Parameters.AddWithValue("@edad", registroSocial.paciente.Edad);
+                        cmdPaciente.Parameters.AddWithValue("@estado_civil", registroSocial.paciente.EstadoCivil);
+                        cmdPaciente.Parameters.AddWithValue("@grado_instruccion", registroSocial.paciente.GradoInstruccion);
+                        cmdPaciente.Parameters.AddWithValue("@direccion", registroSocial.paciente.Direccion);
+                        cmdPaciente.Parameters.AddWithValue("@celular_paciente", registroSocial.paciente.CelularPaciente);
+                        cmdPaciente.Parameters.AddWithValue("@ocupacion", registroSocial.paciente.Ocupacion);
+                        cmdPaciente.Parameters.AddWithValue("@num_hijos", registroSocial.paciente.NumHijos);
+                        cmdPaciente.Parameters.AddWithValue("@num_hermanos", registroSocial.paciente.NumHermanos);
+                        cmdPaciente.Parameters.AddWithValue("@seguro", registroSocial.paciente.Seguro);
+                        cmdPaciente.Parameters.AddWithValue("@dx_medico", registroSocial.paciente.DxMedico);
+
+                        // Ejecuta el comando y obtiene el ID del paciente insertado
+                        pacienteId = Convert.ToInt32(cmdPaciente.ExecuteScalar());
+
+                        // Asegúrate de que pacienteId sea válido
+                        if (pacienteId <= 0)
+                        {
+                            
+                            throw new Exception("Error al insertar paciente: ID no válido. Datos del paciente: " + pacienteId); 
+                        }
+                        idpaciente = pacienteId;
+                        GUARDADO = "PACIENTE GUARDADO ";
+                    }
+
+                    // Agregar Datos Generales
+                    int datosGeneralesId;
+                    using (SqlCommand cmdDatosGenerales = new SqlCommand("sp_AddDatosGenerales", cn, transaction))
+                    {
+                        cmdDatosGenerales.CommandType = CommandType.StoredProcedure;
+
+                        cmdDatosGenerales.Parameters.AddWithValue("@ID_paciente", pacienteId);
+                        cmdDatosGenerales.Parameters.AddWithValue("@fecha_aplicacion", registroSocial.datos.FechaAplicacion);
+                        cmdDatosGenerales.Parameters.AddWithValue("@fecha_ingreso", registroSocial.datos.FechaIngreso);
+                        cmdDatosGenerales.Parameters.AddWithValue("@servicio", registroSocial.datos.Servicio);
+                        cmdDatosGenerales.Parameters.AddWithValue("@cama", registroSocial.datos.Cama);
+                        cmdDatosGenerales.Parameters.AddWithValue("@modalidad_ingreso", registroSocial.datos.ModalidadIngreso);
+                        cmdDatosGenerales.Parameters.AddWithValue("@tipo_familia", registroSocial.datos.TipoFamilia);
+                        cmdDatosGenerales.Parameters.AddWithValue("@observaciones_familia", registroSocial.datos.ObservacionesFamilia);
+                        cmdDatosGenerales.Parameters.AddWithValue("@acciones_realizadas", registroSocial.datos.AccionesRealizadas);
+                        cmdDatosGenerales.Parameters.AddWithValue("@diagnostico_social", registroSocial.datos.DiagnosticoSocial);
+
+                        // Ejecuta el comando y obtiene el ID de datos generales insertado
+                        try
+                        {
+                            datosGeneralesId = Convert.ToInt32(cmdDatosGenerales.ExecuteScalar());
+                        }
+                        catch (Exception ex)
+                        {
+                            // Guarda el error en un log o envía un mensaje detallado
+                            throw new Exception($"Error en la inserción de Datos Generales: {ex.Message}");
+                        }
+
+                        GUARDADO += "DATOS GENERALES GUARDADOS";
+                    }
+
+                    // Agregar cada Responsable si existen en la lista
+                    if (registroSocial.responsables != null && registroSocial.responsables.Count > 0)
+                    {
+                        int cont = 0;
+                        foreach (var responsable in registroSocial.responsables)
+                        {
+
+                            using (SqlCommand cmdResponsable = new SqlCommand("sp_AddResponsable", cn, transaction))
+                            {
+                                cmdResponsable.CommandType = CommandType.StoredProcedure;
+
+                                cmdResponsable.Parameters.AddWithValue("@ID_paciente", pacienteId);
+                                cmdResponsable.Parameters.AddWithValue("@nombre_responsable", responsable.NombreResponsable);
+                                cmdResponsable.Parameters.AddWithValue("@edad", responsable.Edad);
+                                cmdResponsable.Parameters.AddWithValue("@DNI", responsable.DNI);
+                                cmdResponsable.Parameters.AddWithValue("@ocupacion", responsable.Ocupacion);
+                                cmdResponsable.Parameters.AddWithValue("@parentesco", responsable.Parentesco);
+                                cmdResponsable.Parameters.AddWithValue("@celular_responsable", responsable.CelularResponsable);
+                                cmdResponsable.Parameters.AddWithValue("@grado_instruccion", responsable.GradoInstruccion);
+
+                                cmdResponsable.ExecuteNonQuery();
+                                cont ++ ;
+                                GUARDADO += "Res"+ cont;
+                            }
+                        }
+                    }
+
+                    // Confirma la transacción
+                    transaction.Commit();
+                    return GUARDADO;
+                }
+                catch (Exception e)
+                {
+
+                    return "Error al guardar el registro. " + e.Message + "\n" + e.StackTrace;
+                }
+            }
+        }
+
+
     }
 }

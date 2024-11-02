@@ -31,3 +31,14 @@ C:\Users\HDHVCA\Documents\git\RegistroSocial\registroSocial\Capa Negocio\obj\Deb
 C:\Users\HDHVCA\Documents\git\RegistroSocial\registroSocial\Capa Negocio\obj\Debug\Capa Negocio.csproj.CopyComplete
 C:\Users\HDHVCA\Documents\git\RegistroSocial\registroSocial\Capa Negocio\obj\Debug\Capa Negocio.dll
 C:\Users\HDHVCA\Documents\git\RegistroSocial\registroSocial\Capa Negocio\obj\Debug\Capa Negocio.pdb
+C:\Users\ALAN\Documents\git\RegistroSocial\RegistroSocial\RegistroSocial\registroSocial\Capa Negocio\bin\Debug\Capa Negocio.dll
+C:\Users\ALAN\Documents\git\RegistroSocial\RegistroSocial\RegistroSocial\registroSocial\Capa Negocio\bin\Debug\Capa Negocio.pdb
+C:\Users\ALAN\Documents\git\RegistroSocial\RegistroSocial\RegistroSocial\registroSocial\Capa Negocio\bin\Debug\Capa Datos.dll
+C:\Users\ALAN\Documents\git\RegistroSocial\RegistroSocial\RegistroSocial\registroSocial\Capa Negocio\bin\Debug\Capa Entidad.dll
+C:\Users\ALAN\Documents\git\RegistroSocial\RegistroSocial\RegistroSocial\registroSocial\Capa Negocio\bin\Debug\Capa Datos.pdb
+C:\Users\ALAN\Documents\git\RegistroSocial\RegistroSocial\RegistroSocial\registroSocial\Capa Negocio\bin\Debug\Capa Entidad.pdb
+C:\Users\ALAN\Documents\git\RegistroSocial\RegistroSocial\RegistroSocial\registroSocial\Capa Negocio\obj\Debug\Capa Negocio.csprojAssemblyReference.cache
+C:\Users\ALAN\Documents\git\RegistroSocial\RegistroSocial\RegistroSocial\registroSocial\Capa Negocio\obj\Debug\Capa Negocio.csproj.CoreCompileInputs.cache
+C:\Users\ALAN\Documents\git\RegistroSocial\RegistroSocial\RegistroSocial\registroSocial\Capa Negocio\obj\Debug\Capa Negocio.csproj.CopyComplete
+C:\Users\ALAN\Documents\git\RegistroSocial\RegistroSocial\RegistroSocial\registroSocial\Capa Negocio\obj\Debug\Capa Negocio.dll
+C:\Users\ALAN\Documents\git\RegistroSocial\RegistroSocial\RegistroSocial\registroSocial\Capa Negocio\obj\Debug\Capa Negocio.pdb

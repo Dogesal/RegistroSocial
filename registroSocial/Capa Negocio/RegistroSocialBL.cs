@@ -21,5 +21,13 @@ namespace Capa_Negocio
 
         }
 
+        public string guardadRegistroSocial(RegistroSocialCLS registro)
+        {
+            RegistroSocialDAL obj = new RegistroSocialDAL();
+
+            return obj.AgregarRegistroSocial(registro);
+
+        }
+
     }
 }
