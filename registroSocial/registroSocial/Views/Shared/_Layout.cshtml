@@ -7,7 +7,10 @@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="~/Content/tabla.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
 </head>
 <body>
     @*<div class="navbar navbar-inverse navbar-fixed-top">
@@ -39,7 +42,11 @@
             <!-- Menú de Navegación con ancho de columna 4 -->
             <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #39A6A3; height:auto ; width:100%">
                 <div class="container">
-                    <a class="navbar-brand fw-bold" href="#">FICHA DE REGISTRO SOCIAL</a>
+                    <div class="d-flex justify-content-start" style="height:60px">
+                        <img src="~/img/hospital logo.png" />
+                    </div>
+                    
+                    @Html.ActionLink("FICHA DE REGISTRO SOCIAL", "Index", "DatosGenerales", new { area = "" }, new { @class = "navbar-brand fw-bold" })
                     <button class="navbar-toggler"
                             type="button">
                         <span class="navbar-toggler-icon"></span>
@@ -50,13 +57,13 @@
                                 @Html.ActionLink("Nuevo Registro", "RegistroSocial", "RegistroSocial", new { area = "" }, new { @class = "nav-link" })
                             </li>
                             <li class="nav-item">
-                                <div class = "nav-link"> | </div>
+                                <div class="nav-link"> | </div>
                             </li>
                             <li class="nav-item">
                                 @Html.ActionLink("Búsqueda", "Busqueda", "DatosGenerales", new { area = "" }, new { @class = "nav-link" })
                             </li>
                         </ul>
-                        
+
                     </div>
                 </div>
             </nav>
@@ -69,11 +76,12 @@
         </div>
     </div>
 
-    <input id="idRaiz" type="hidden" value=@Url.Content("~")/>
+    <input id="idRaiz" type="hidden" value=@Url.Content("~") />
 
 
-
+    <script src="~/Scripts/sweetalert.js"></script>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 </body>
 </html>

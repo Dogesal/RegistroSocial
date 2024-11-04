@@ -25,12 +25,34 @@ namespace registroSocial.Controllers
             return Json(registroBL.registroSocial(id), JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult guardarRegistroSocial(RegistroSocialCLS registro)
+        public JsonResult editarRegistroSocial(int id, RegistroSocialCLS registroSocialR)
+        {
+            RegistroSocialBL registroBL = new RegistroSocialBL();
+
+
+
+            return Json(registroBL.editarRegistroSocial(id, registroSocialR), JsonRequestBehavior.AllowGet);
+
+
+        }
+
+        public JsonResult guardarRegistroSocial(RegistroSocialCLS registroSocialR)
+        {
+            RegistroSocialBL registroBL = new RegistroSocialBL();
+
+
+
+            return Json(registroBL.guardadRegistroSocial(registroSocialR), JsonRequestBehavior.AllowGet);
+
+
+        }
+
+        public int eliminarRegistroSocial(int id)
         {
 
             RegistroSocialBL registroBL = new RegistroSocialBL();
 
-            return Json(registroBL.guardadRegistroSocial(registro), JsonRequestBehavior.AllowGet);
+            return registroBL.EliminarRegistroSocial(id);
         }
 
         public ActionResult RegistroSocial()
@@ -38,6 +60,17 @@ namespace registroSocial.Controllers
             
             return View();
 
+        }
+
+        public ActionResult RegistroSocialVista() {
+
+            return View();
+        }
+
+        public ActionResult RegistroSocialEdit()
+        {
+
+            return View();
         }
     }
 }

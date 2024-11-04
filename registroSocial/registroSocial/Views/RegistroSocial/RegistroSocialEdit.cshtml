@@ -1,0 +1,315 @@
+﻿@{
+    ViewBag.Title = "RegistroSocialEdit";
+}
+
+<div class="container">
+    <!-- Título -->
+    <div class="row">
+        <div class="col text-center">
+            <h3>FICHA DE ENTREVISTA SOCIAL</h3>
+        </div>
+    </div>
+
+    <form class="mt-3 " style="width:100%; box-sizing:content-box " method="post">
+        <!-- Datos Generales -->
+        <h5 class="mt-4">Datos Generales</h5>
+        <div class="row">
+            <div class="col-md-3">
+                <label>Fecha de Ingreso:</label>
+                <input type="date" id="fechaIngreso" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label>Fecha de Aplicación:</label>
+                <input type="date" id="fechaAplicacion" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label>Servicio:</label>
+                <input type="text" id="servicio" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label>Cama:</label>
+                <input type="text" id="cama" class="form-control" />
+            </div>
+        </div>
+
+        <!-- Datos del Paciente -->
+        <h5 class="mt-4">Datos del Paciente</h5>
+        <div class="row">
+            <div class="col-md-3">
+                <label>Nombre:</label>
+                <input type="text" id="nombrePaciente" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label>DNI:</label>
+                <input type="text" id="dni" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label>Edad:</label>
+                <input type="number" id="edad" class="form-control" />
+            </div>
+            <div class="col-md-3">
+                <label>Estado Civil:</label>
+                <input type="text" id="estadoCivil" class="form-control" />
+            </div>
+            <div class="col-md-3 mt-2">
+                <label>Grado de Instrucción:</label>
+                <input type="text" id="gradoInstruccion" class="form-control" />
+            </div>
+            <div class="col-md-3 mt-2">
+                <label>Dirección:</label>
+                <input type="text" id="direccion" class="form-control" />
+            </div>
+            <div class="col-md-3 mt-2">
+                <label>Celular:</label>
+                <input type="tel" id="celular" class="form-control" />
+            </div>
+            <div class="col-md-3 mt-2">
+                <label>Ocupación:</label>
+                <input type="text" id="ocupacion" class="form-control" />
+            </div>
+            <div class="col-md-4 mt-2">
+                <label>Número de Hijos:</label>
+                <input type="number" id="numHijos" class="form-control" />
+            </div>
+            <div class="col-md-4 mt-2">
+                <label>Número de Hermanos:</label>
+                <input type="number" id="numHermanos" class="form-control" />
+            </div>
+            <div class="col-md-4 mt-2">
+                <label>Seguro:</label>
+                <input type="text" id="seguro" class="form-control" />
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mt-2">
+                <label>Dx Médico:</label>
+                <textarea class="form-control" rows="2" id="dxMedico"></textarea>
+            </div>
+        </div>
+
+        <!-- Responsables Section -->
+        <div class="container">
+            <h5 class="mt-4">Responsables</h5>
+            <div id="responsablesContainer">
+                <p>No hay responsables registrados.</p>
+            </div>
+        </div>
+
+        <!-- Datos Adicionales -->
+        <div class="row">
+            <h5 class="mt-4">Modalidad de ingreso</h5>
+            <div class="col-md-6">
+                <label>Modalidad de Ingreso:</label>
+                <input type="text" id="modalidadIngreso" class="form-control" />
+            </div>
+        </div>
+        <div class="row">
+            <h5 class="mt-4">Tipo de familia</h5>
+            <div class="col-md-6">
+                <label>Tipo de Familia:</label>
+                <input type="text" id="tipoFamilia" class="form-control" />
+            </div>
+            <div class="col-md-6">
+                <label>Acciones Realizadas:</label>
+                <input type="text" id="accionesRealizadas" class="form-control" />
+            </div>
+            <div class="">
+                <label>Observaciones tipo de familia:</label>
+                <textarea class="form-control" rows="2" id="observacionesTipoFamilia"></textarea>
+            </div>
+        </div>
+
+        <!-- Diagnóstico Social -->
+        <h5 class="mt-4 mb-4">Diagnóstico Social</h5>
+        <div class="row ">
+            <div class="col-md-12">
+                <label>Diagnóstico Social:</label>
+                <textarea id="diagnosticoSocial" class="form-control" rows="2"></textarea>
+            </div>
+        </div>
+
+        <!-- Botón Guardar Cambios -->
+        <div class="row mb-4 mt-4">
+            <button onclick="guardarCambios()" class="btn btn-danger">GUARDAR CAMBIOS</button>
+        </div>
+
+        </form>
+</div>
+
+<script>
+    function convertirFecha(fechaJson) {
+        const timestamp = parseInt(fechaJson.replace(/\/Date\((\d+)\)\//, "$1"), 10);
+        const date = new Date(timestamp);
+        return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+    }
+
+    function obtenerParametroUrl(nombre) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(nombre);
+    }
+
+    async function cargarDatos() {
+        const id = obtenerParametroUrl('id');
+        if (!id) {
+            alert('ID no especificado en la URL');
+            return;
+        }
+
+        try {
+            const response = await fetch(`/RegistroSocial/traerRegistroSocial/?id=${id}`);
+            const data = await response.json();
+
+            document.getElementById('fechaIngreso').value = convertirFecha(data.datos.FechaIngreso);
+            document.getElementById('fechaAplicacion').value = convertirFecha(data.datos.FechaAplicacion);
+            document.getElementById('servicio').value = data.datos.Servicio;
+            document.getElementById('cama').value = data.datos.Cama;
+            document.getElementById('accionesRealizadas').value = data.datos.AccionesRealizadas;
+            document.getElementById('observacionesTipoFamilia').value = data.datos.ObservacionesFamilia;
+            document.getElementById('modalidadIngreso').value = data.datos.ModalidadIngreso;
+            document.getElementById('tipoFamilia').value = data.datos.TipoFamilia;
+            document.getElementById('diagnosticoSocial').value = data.datos.DiagnosticoSocial;
+
+            document.getElementById('nombrePaciente').value = data.paciente.NombrePaciente;
+            document.getElementById('dni').value = data.paciente.DNI;
+            document.getElementById('edad').value = data.paciente.Edad;
+            document.getElementById('estadoCivil').value = data.paciente.EstadoCivil;
+            document.getElementById('gradoInstruccion').value = data.paciente.GradoInstruccion;
+            document.getElementById('direccion').value = data.paciente.Direccion;
+            document.getElementById('celular').value = data.paciente.CelularPaciente;
+            document.getElementById('ocupacion').value = data.paciente.Ocupacion;
+            document.getElementById('numHijos').value = data.paciente.NumHijos;
+            document.getElementById('numHermanos').value = data.paciente.NumHermanos;
+            document.getElementById('seguro').value = data.paciente.Seguro;
+            document.getElementById('dxMedico').value = data.paciente.DxMedico;
+
+            const responsablesContainer = document.getElementById('responsablesContainer');
+            responsablesContainer.innerHTML = '';  // Limpiar el contenedor
+
+            if (data.responsables && Array.isArray(data.responsables) && data.responsables.length > 0) {
+                data.responsables.forEach((responsable, index) => {
+                    const div = document.createElement('div');
+                    div.classList.add('row', 'mb-3');
+                    div.innerHTML = `
+                    <div class="col-md-3">
+                        <label>Responsable ${index + 1}:</label>
+                        <input type="text" class="form-control" id="nombreResponsable${index}" value="${responsable.NombreResponsable}">
+                    </div>
+                    <div class="col-md-3">
+                        <label>DNI:</label>
+                        <input type="text" class="form-control" id="dniResponsable${index}" value="${responsable.DNI}">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Edad:</label>
+                        <input type="number" class="form-control" id="edadResponsable${index}" value="${responsable.Edad}">
+                    </div>
+                    <div class="col-md-3">
+                        <label>Parentesco:</label>
+                        <input type="text" class="form-control" id="parentescoResponsable${index}" value="${responsable.Parentesco}">
+                    </div>
+                    <div class="col-md-3 mt-2">
+                        <label>Celular:</label>
+                        <input type="tel" class="form-control" id="celularResponsable${index}" value="${responsable.CelularResponsable}">
+                    </div>
+                    <div class="col-md-3 mt-2">
+                        <label>Ocupación:</label>
+                        <input type="text" class="form-control" id="ocupacionResponsable${index}" value="${responsable.Ocupacion}">
+                    </div>
+                    <div class="col-md-3 mt-2">
+                        <label>Grado de Instrucción:</label>
+                        <input type="text" class="form-control" id="gradoInstruccionResponsable${index}" value="${responsable.GradoInstruccion}">
+                    </div>
+                    `;
+                    responsablesContainer.appendChild(div);
+                });
+            } else {
+                responsablesContainer.innerHTML = '<p>No hay responsables registrados.</p>';
+            }
+
+        } catch (error) {
+            console.error('Error al cargar los datos:', error);
+            alert('Error al cargar los datos. Intente nuevamente.');
+        }
+    }
+
+
+
+    async function guardarCambios() {
+        const id = obtenerParametroUrl('id');
+        console.log(id);
+        // Collect general data
+        const datosGenerales = {
+            FechaAplicacion: document.getElementById('fechaAplicacion').value,
+            FechaIngreso: document.getElementById('fechaIngreso').value,
+            Servicio: document.getElementById('servicio').value,
+            Cama: document.getElementById('cama').value,
+            ModalidadIngreso: document.getElementById('modalidadIngreso').value,
+            TipoFamilia: document.getElementById('tipoFamilia').value,
+            ObservacionesFamilia: document.getElementById('observacionesTipoFamilia').value,
+            AccionesRealizadas: document.getElementById('accionesRealizadas').value,
+            DiagnosticoSocial: document.getElementById('diagnosticoSocial').value
+        };
+
+        // Collect patient data
+        const datosPaciente = {
+            NombrePaciente: document.getElementById('nombrePaciente').value,
+            DNI: document.getElementById('dni').value,
+            Edad: document.getElementById('edad').value,
+            EstadoCivil: document.getElementById('estadoCivil').value,
+            GradoInstruccion: document.getElementById('gradoInstruccion').value,
+            Direccion: document.getElementById('direccion').value,
+            CelularPaciente: document.getElementById('celular').value,
+            Ocupacion: document.getElementById('ocupacion').value,
+            NumHijos: document.getElementById('numHijos').value,
+            NumHermanos: document.getElementById('numHermanos').value,
+            Seguro: document.getElementById('seguro').value,
+            DxMedico: document.getElementById('dxMedico').value
+        };
+
+        // Collect responsible data
+        const responsables = Array.from(document.querySelectorAll('#responsablesContainer .row')).map((row, index) => ({
+            NombreResponsable: document.getElementById(`nombreResponsable${index}`).value,
+            DNI: document.getElementById(`dniResponsable${index}`).value,
+            Edad: document.getElementById(`edadResponsable${index}`).value,
+            Ocupacion: document.getElementById(`ocupacionResponsable${index}`).value,
+            Parentesco: document.getElementById(`parentescoResponsable${index}`).value,
+            CelularResponsable: document.getElementById(`celularResponsable${index}`).value,
+            GradoInstruccion: document.getElementById(`gradoInstruccionResponsable${index}`).value
+        }));
+
+        // Create main data object
+        const datos = {
+            paciente: datosPaciente,
+            datos: datosGenerales,
+            responsables: responsables
+        };
+
+        // Debugging: Log the data to be sent
+        console.log("Datos a enviar:", JSON.stringify(datos, null, 2));
+
+        try {
+            fetch(`/RegistroSocial/EditarRegistroSocial/${id}`, {
+                method: 'POST',  // Using POST to ensure it works without relying on PUT
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(datos)  // 'datos' should match the structure of RegistroSocialCLS
+            }).then(res => {
+                if (res.ok) {
+                    alert("registro guardado");
+                    window.location.href = `http://localhost:64899/DatosGenerales/Busqueda`;
+                    return res.json();  // Si tu API retorna un JSON, puedes procesarlo aquí
+                } else {
+                    throw new Error('Error en la respuesta del servidor');  // Maneja el caso donde la respuesta no es ok
+                }
+            });
+           
+            
+
+        } catch (error) {
+            console.error('Error en la actualización del registro:', error);
+            alert('Error en la actualización del registro. Intente nuevamente.');
+        }
+    }
+
+
+    window.onload = cargarDatos;
+</script>

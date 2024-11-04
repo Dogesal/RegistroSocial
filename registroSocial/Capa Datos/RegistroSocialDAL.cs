@@ -31,7 +31,7 @@ namespace Capa_Datos
                         cmd.Parameters.AddWithValue("@id",id);
                         SqlDataReader drd = cmd.ExecuteReader();
 
-
+                        
                         if (drd != null)
                         {
                             
@@ -298,7 +298,7 @@ namespace Capa_Datos
 
                                 cmdResponsable.ExecuteNonQuery();
                                 cont ++ ;
-                                GUARDADO += "Res"+ cont;
+                                GUARDADO += "Res:"+ responsable.GradoInstruccion + cont;
                             }
                         }
                     }
@@ -314,6 +314,151 @@ namespace Capa_Datos
                 }
             }
         }
+
+        public int EliminarRegistroSocial(int id)
+        {
+            int filasAfectadas = 0;
+
+            using (SqlConnection cn = new SqlConnection(cadenaConexion))
+            {
+                try
+                {
+                    cn.Open();
+
+                    using (SqlCommand cmdPaciente = new SqlCommand("spEliminarPacientePorDatosGenerales", cn))
+                    {
+                        cmdPaciente.CommandType = CommandType.StoredProcedure;
+                        cmdPaciente.Parameters.AddWithValue("@id_datos_generales",id);
+                        filasAfectadas = cmdPaciente.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception e)
+                {
+                    // Manejo de errores
+                    filasAfectadas = -1; 
+                }
+            }
+
+            return filasAfectadas;
+        }
+
+        public string EditarRegistroSocial(int id, RegistroSocialCLS registroSocialR)
+        {
+            int filas = 0;
+            StringBuilder errores = new StringBuilder();
+
+            using (SqlConnection cn = new SqlConnection(cadenaConexion))
+            {
+                cn.Open();
+                SqlTransaction transaction = cn.BeginTransaction();
+
+                try
+                {
+                    // 1. Modificar datos del paciente
+                    using (SqlCommand cmd = new SqlCommand("EditarPacienteXIDdatosGenerales", cn, transaction))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@ID_datos_generales", id);
+                        cmd.Parameters.AddWithValue("@Nombre", registroSocialR.paciente.NombrePaciente);
+                        cmd.Parameters.AddWithValue("@DNI", registroSocialR.paciente.DNI);
+                        cmd.Parameters.AddWithValue("@Edad", registroSocialR.paciente.Edad);
+                        cmd.Parameters.AddWithValue("@EstadoCivil", registroSocialR.paciente.EstadoCivil);
+                        cmd.Parameters.AddWithValue("@GradoInstruccion", registroSocialR.paciente.GradoInstruccion);
+                        cmd.Parameters.AddWithValue("@Direccion", registroSocialR.paciente.Direccion);
+                        cmd.Parameters.AddWithValue("@Celular", registroSocialR.paciente.CelularPaciente);
+                        cmd.Parameters.AddWithValue("@Ocupacion", registroSocialR.paciente.Ocupacion);
+                        cmd.Parameters.AddWithValue("@NumHijos", registroSocialR.paciente.NumHijos);
+                        cmd.Parameters.AddWithValue("@NumHermanos", registroSocialR.paciente.NumHermanos);
+                        cmd.Parameters.AddWithValue("@Seguro", registroSocialR.paciente.Seguro);
+                        cmd.Parameters.AddWithValue("@DxMedico", registroSocialR.paciente.DxMedico);
+
+                        try
+                        {
+                            filas += cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            errores.AppendLine("Error al modificar datos del paciente: " + e.Message);
+                        }
+                    }
+
+                    // 2. Modificar datos generales
+                    using (SqlCommand cmd = new SqlCommand("sp_EditDatosGenerales", cn, transaction))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@fecha_aplicacion", registroSocialR.datos.FechaAplicacion);
+                        cmd.Parameters.AddWithValue("@fecha_ingreso", registroSocialR.datos.FechaIngreso);
+                        cmd.Parameters.AddWithValue("@servicio", registroSocialR.datos.Servicio);
+                        cmd.Parameters.AddWithValue("@cama", registroSocialR.datos.Cama);
+                        cmd.Parameters.AddWithValue("@modalidad_ingreso", registroSocialR.datos.ModalidadIngreso);
+                        cmd.Parameters.AddWithValue("@tipo_familia", registroSocialR.datos.TipoFamilia);
+                        cmd.Parameters.AddWithValue("@observaciones_familia", registroSocialR.datos.ObservacionesFamilia);
+                        cmd.Parameters.AddWithValue("@acciones_realizadas", registroSocialR.datos.AccionesRealizadas);
+                        cmd.Parameters.AddWithValue("@diagnostico_social", registroSocialR.datos.DiagnosticoSocial);
+
+                        try
+                        {
+                            filas += cmd.ExecuteNonQuery();
+                        }
+                        catch (Exception e)
+                        {
+                            errores.AppendLine("Error al modificar datos generales: " + e.Message);
+                        }
+                    }
+
+                    // 3. Modificar datos de responsables
+                    foreach (var responsable in registroSocialR.responsables)
+                    {
+                        using (SqlCommand cmd = new SqlCommand("EditarResponsableXIDdatosGenerales", cn, transaction))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@ID_datos_generales", id);
+                            cmd.Parameters.AddWithValue("@Nombre", responsable.NombreResponsable);
+                            cmd.Parameters.AddWithValue("@edad", responsable.Edad);
+                            cmd.Parameters.AddWithValue("@DNI", responsable.DNI);
+                            cmd.Parameters.AddWithValue("@Ocupacion", responsable.Ocupacion);
+                            cmd.Parameters.AddWithValue("@Parentesco", responsable.Parentesco);
+                            cmd.Parameters.AddWithValue("@Celular", responsable.CelularResponsable);
+                            cmd.Parameters.AddWithValue("@GradoInstruccion", responsable.GradoInstruccion);
+
+                            try
+                            {
+                                filas += cmd.ExecuteNonQuery();
+                            }
+                            catch (Exception e)
+                            {
+                                errores.AppendLine($"Error al modificar datos del responsable {responsable.NombreResponsable}: " + e.Message);
+                            }
+                        }
+                    }
+
+                    // Confirmar la transacción si todas las operaciones son exitosas
+                    if (errores.Length == 0)
+                    {
+                        transaction.Commit();
+                        return $"Se han actualizado {filas} registros correctamente.";
+                    }
+                    else
+                    {
+                        // Revertir la transacción en caso de errores
+                        transaction.Rollback();
+                        return "Se encontraron errores: " + errores.ToString();
+                    }
+                }
+                catch (Exception e)
+                {
+                    // Revertir la transacción en caso de error crítico
+                    transaction.Rollback();
+                    return "Error crítico: " + e.Message;
+                }
+                finally
+                {
+                    cn.Close();
+                }
+            }
+        }
+
 
 
     }

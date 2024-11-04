@@ -68,6 +68,64 @@ namespace Capa_Datos
     return lista;
 }
 
+        public List<DatosGeneralesPacienteCLS> listarRegistroSocialPaciente()
+        {
+            List<DatosGeneralesPacienteCLS> lista = null;
+
+
+
+            using (SqlConnection cn = new SqlConnection(cadenaConexion))
+            {
+                try
+                {
+                    cn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand("sp_datosGeneralesPaciente", cn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        SqlDataReader drd = cmd.ExecuteReader();
+
+
+                        if (drd != null)
+                        {
+                            lista = new List<DatosGeneralesPacienteCLS>();
+
+                            while (drd.Read())
+                            {
+                                DatosGeneralesPacienteCLS registro = new DatosGeneralesPacienteCLS();
+
+                                // Asignación de columnas a las propiedades de RegistroSocialCLS
+                                registro.nombrePaciente = drd["nombre_paciente"] != DBNull.Value ? drd["nombre_paciente"].ToString() : "";
+                                registro.IDRegistroSocial = drd["ID_datos_generales"] != DBNull.Value ? (int)drd["ID_datos_generales"] : 0;
+                                registro.IDPaciente = drd["ID_paciente"] != DBNull.Value ? (int)drd["ID_paciente"] : 0;
+                                registro.FechaAplicacion = drd["fecha_aplicacion"] != DBNull.Value ? (DateTime)drd["fecha_aplicacion"] : DateTime.MinValue;
+                                registro.FechaIngreso = drd["fecha_ingreso"] != DBNull.Value ? (DateTime)drd["fecha_ingreso"] : DateTime.MinValue;
+                                registro.Servicio = drd["servicio"] != DBNull.Value ? drd["servicio"].ToString() : "";
+                                registro.Cama = drd["cama"] != DBNull.Value ? drd["cama"].ToString() : "";
+                                registro.ModalidadIngreso = drd["modalidad_ingreso"] != DBNull.Value ? drd["modalidad_ingreso"].ToString() : "";
+                                registro.TipoFamilia = drd["tipo_familia"] != DBNull.Value ? drd["tipo_familia"].ToString() : "";
+                                registro.ObservacionesFamilia = drd["observaciones_familia"] != DBNull.Value ? drd["observaciones_familia"].ToString() : "";
+                                registro.AccionesRealizadas = drd["acciones_realizadas"] != DBNull.Value ? drd["acciones_realizadas"].ToString() : "";
+                                registro.DiagnosticoSocial = drd["diagnostico_social"] != DBNull.Value ? drd["diagnostico_social"].ToString() : "";
+
+                                // Agregar el registro a la lista
+                                lista.Add(registro);
+                            }
+                        }
+                    }
+
+                    cn.Close();
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Error: " + e.Message);
+                    cn.Close();
+                }
+            }
+
+            return lista;
+        }
+
         public int agregarDatosGenerales(DatosGeneralesCLS datosGenerales)
         {
             int filasAfectadas = 0;
@@ -153,9 +211,9 @@ namespace Capa_Datos
         }
 
 
-        public List<DatosGeneralesCLS> filtrarRegistroSocial(string parametro)
+        public List<DatosGeneralesPacienteCLS> filtrarRegistroSocial(string parametro)
         {
-            List<DatosGeneralesCLS> lista = null;
+            List<DatosGeneralesPacienteCLS> lista = null;
 
 
 
@@ -174,13 +232,14 @@ namespace Capa_Datos
 
                         if (drd != null)
                         {
-                            lista = new List<DatosGeneralesCLS>();
+                            lista = new List<DatosGeneralesPacienteCLS>();
 
                             while (drd.Read())
                             {
-                                DatosGeneralesCLS registro = new DatosGeneralesCLS();
+                                DatosGeneralesPacienteCLS registro = new DatosGeneralesPacienteCLS();
 
                                 // Asignación de columnas a las propiedades de RegistroSocialCLS
+                                registro.nombrePaciente = drd["nombre_paciente"] != DBNull.Value ? drd["nombre_paciente"].ToString() : "";
                                 registro.IDRegistroSocial = drd["ID_datos_generales"] != DBNull.Value ? (int)drd["ID_datos_generales"] : 0;
                                 registro.IDPaciente = drd["ID_paciente"] != DBNull.Value ? (int)drd["ID_paciente"] : 0;
                                 registro.FechaAplicacion = drd["fecha_aplicacion"] != DBNull.Value ? (DateTime)drd["fecha_aplicacion"] : DateTime.MinValue;

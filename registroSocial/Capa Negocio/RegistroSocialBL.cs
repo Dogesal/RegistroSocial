@@ -29,5 +29,20 @@ namespace Capa_Negocio
 
         }
 
+        public int EliminarRegistroSocial(int id)
+        {
+            RegistroSocialDAL obj = new RegistroSocialDAL();
+
+            return obj.EliminarRegistroSocial(id);
+
+        }
+
+        public string editarRegistroSocial(int id, RegistroSocialCLS registroSocial)
+        {
+            RegistroSocialDAL obj = new RegistroSocialDAL();
+
+            return obj.EditarRegistroSocial(id,registroSocial);
+
+        }
     }
 }

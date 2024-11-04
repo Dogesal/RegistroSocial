@@ -19,7 +19,15 @@ namespace Capa_Negocio
 
         }
 
-        public List<DatosGeneralesCLS> filtrarRegistroSocial(string parametro)
+        public List<DatosGeneralesPacienteCLS> listarRegistroSocialPaciente()
+        {
+            DatosGeneralesDAL registroSocialDAL = new DatosGeneralesDAL();
+
+            return registroSocialDAL.listarRegistroSocialPaciente();
+
+        }
+
+        public List<DatosGeneralesPacienteCLS> filtrarRegistroSocial(string parametro)
         {
             DatosGeneralesDAL registroSocialDAL = new DatosGeneralesDAL();
 

@@ -3,5 +3,23 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="container text-center mt-5">
+    <h1 class="display-4">¡Bienvenido!</h1>
+    <div id="greeting" class="lead"></div>
+    <p class="mt-3">Estamos encantados de tenerte aquí. ¡Explora nuestros registros!</p>
+    @Html.ActionLink("Ver Registros","Busqueda", "DatosGenerales", new { area = "" }, new { @class = "btn btn-primary btn-lg mt-4" })
+</div>
+<script>function getGreeting() {
+            const hours = new Date().getHours();
+            let greeting;
+            if (hours < 12) {
+                greeting = "¡Buenos días!";
+            } else if (hours < 18) {
+                greeting = "¡Buenas tardes!";
+            } else {
+                greeting = "¡Buenas noches!";
+            }
+            document.getElementById("greeting").textContent = greeting;
+        }
 
+        window.onload = getGreeting;</script>

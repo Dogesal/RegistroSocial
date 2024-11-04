@@ -44,6 +44,7 @@
 
         const result = await response.text();
         alert(result);
+        window.location.href = `http://localhost:64899/DatosGenerales/Busqueda`;
     } catch (error) {
         alert("Error al guardar el registro: " + error);
     }
