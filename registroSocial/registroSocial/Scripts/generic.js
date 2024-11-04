@@ -156,14 +156,6 @@ function ConfirmacionSwing(texto="Desea guardar los cambios?",title="Confirmacio
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
         confirmButtonText: "Si, adelante"
-    }).then((result) => {
-        if (result.isConfirmed) {
-            Swal.fire({
-                title: "Borrado!",
-                text: "El registro fue borrado.",
-                icon: "success"
-            });
-        }
     });
 }
 

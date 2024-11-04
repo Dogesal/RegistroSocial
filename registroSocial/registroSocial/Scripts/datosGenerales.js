@@ -14,16 +14,24 @@ function Editar(id){
 }
 
 function Eliminar(id) {
-
     ConfirmacionSwing("¿Está seguro de que desea eliminar este registro?", "Confirmación")
         .then((result) => {
             if (result.isConfirmed) {
                 // Si el usuario confirma, realizar la eliminación
-                fetch(`/RegistroSocial/eliminarRegistroSocial?id=${id}`)
+                fetch(`/RegistroSocial/eliminarRegistroSocial/?id=${id}`)
                     .then(response => {
                         if (response.ok) {
-                            CorrectoSwing("Registro eliminado exitosamente.");
-                            window.location.reload();
+                            // Mostrar el mensaje de éxito después de que se elimine el registro
+                            Swal.fire({
+                                title: "Borrado!",
+                                text: "El registro fue borrado.",
+                                icon: "success"
+                            });
+
+                            // Recargar la página después de un breve retraso para permitir que el usuario vea el mensaje
+                            setTimeout(() => {
+                                window.location.reload(); // Recargar la página
+                            }, 1500); // 1500 milisegundos (1.5 segundos)
                         } else {
                             ErrorSwing("Error al eliminar el registro.");
                         }
@@ -36,7 +44,6 @@ function Eliminar(id) {
                 console.log("Eliminación cancelada.");
             }
         });
-
 }
 
 function MasInfo(id) {

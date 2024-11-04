@@ -107,7 +107,7 @@
         <div class="col-md-6">
             <label>Modalidad de Ingreso:</label>
             <input type="text" id="modalidadIngreso" class="form-control" readonly />
-        </div> 
+        </div>
     </div>
 
     <div class="row">
@@ -139,6 +139,17 @@
             <textarea id="diagnosticoSocial" class="form-control" rows="2" readonly></textarea>
         </div>
     </div>
+
+    <div class="row mt-5">
+        <div class="col text-center">
+            <p>__________________________________</p>
+            <p>FIRMA Y SELLO DEL TRABAJADOR(A) SOCIAL</p>
+        </div>
+    </div>
+
+    <div class="text-center my-4">
+        <button onclick="imprimir()" class="btn btn-primary">Imprimir</button>
+    </div>
 </div>
 
 <script>
@@ -159,7 +170,7 @@
     function obtenerParametroUrl(nombre) {
         const urlParams = new URLSearchParams(window.location.search);
         return urlParams.get(nombre);
-    } 
+    }
 
     async function cargarDatos() {
         const id = obtenerParametroUrl('id');
@@ -249,4 +260,9 @@
 
     window.onload = cargarDatos;
 
+</script>
+<script>
+    function imprimir() {
+        window.print();
+    }
 </script>

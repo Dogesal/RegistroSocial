@@ -16,7 +16,7 @@ namespace registroSocial
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "RegistroSocial", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Usuario", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
