@@ -2,6 +2,11 @@
 @{
     ViewBag.Title = "DatosPaciente";
 }
+@if (Session["UsuarioAutenticado"] == null || (bool)Session["UsuarioAutenticado"] != true)
+{
+
+    <script>window.location.href = `/Usuario`;</script>
+}
 
 <h2>Datos Paciente</h2>
 

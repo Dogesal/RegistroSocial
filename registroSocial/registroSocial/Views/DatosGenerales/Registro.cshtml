@@ -1,6 +1,11 @@
-﻿    
+﻿
 @{
     ViewBag.Title = "Registro";
+}
+@if (Session["UsuarioAutenticado"] == null || (bool)Session["UsuarioAutenticado"] != true)
+{
+
+    <script>window.location.href = `/Usuario`;</script>
 }
 
 <h2>Registro</h2>

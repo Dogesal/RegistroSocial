@@ -1,6 +1,12 @@
 ﻿@{
     ViewBag.Title = "RegistroSocialEdit";
 }
+@if (Session["UsuarioAutenticado"] == null || (bool)Session["UsuarioAutenticado"] != true)
+{
+
+    <script>window.location.href = `/Usuario`;</script>
+
+}
 
 <div class="container">
     <!-- Título -->
@@ -134,7 +140,7 @@
             <button onclick="guardarCambios()" class="btn btn-danger">GUARDAR CAMBIOS</button>
         </div>
 
-        </form>
+    </form>
 </div>
 
 <script>
@@ -301,8 +307,8 @@
                     throw new Error('Error en la respuesta del servidor');  // Maneja el caso donde la respuesta no es ok
                 }
             });
-           
-            
+
+
 
         } catch (error) {
             console.error('Error en la actualización del registro:', error);

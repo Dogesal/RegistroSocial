@@ -111,6 +111,7 @@
     <Content Include="Scripts\datosGenerales.js" />
     <Content Include="Scripts\responsable.js" />
     <Content Include="Scripts\sweetalert.js" />
+    <Content Include="Scripts\usuario\sesion.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

@@ -26,6 +26,7 @@ namespace registroSocial.Controllers
             {
                 // Establece una sesión indicando que el usuario está autenticado
                 Session["UsuarioAutenticado"] = true;
+                Session["nombre"] = usuario;
             }
 
             return Json(resultado, JsonRequestBehavior.AllowGet);
@@ -34,7 +35,7 @@ namespace registroSocial.Controllers
         public ActionResult Logout()
         {
             Session["UsuarioAutenticado"] = null; // Limpia la sesión al cerrar sesión
-            return RedirectToAction("Login", "Usuario");
+            return RedirectToAction("Index", "Usuario");
         }
     }
 }

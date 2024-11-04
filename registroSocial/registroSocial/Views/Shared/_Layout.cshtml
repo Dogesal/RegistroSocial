@@ -42,6 +42,15 @@
                                 <li class="nav-item">
                                     @Html.ActionLink("Búsqueda", "Busqueda", "DatosGenerales", new { area = "" }, new { @class = "nav-link" })
                                 </li>
+                                <li class="nav-item">
+                                    <div class="nav-link"> | </div>
+                                </li>
+                                <li class="nav-item d-flex">
+                                    <button class="btn btn-danger" onclick="CerrarSesion()" > CERRAR SESION </button>
+                                </li>
+                            </ul>
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end w-100">
+                             
                             </ul>
                         </div>
                     </div>
@@ -59,7 +68,7 @@
 
     <input id="idRaiz" type="hidden" value=@Url.Content("~") />
 
-
+    <script src="~/Scripts/usuario/sesion.js"></script>
     <script src="~/Scripts/sweetalert.js"></script>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>

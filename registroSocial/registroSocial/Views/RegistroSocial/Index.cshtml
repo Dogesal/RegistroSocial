@@ -3,6 +3,12 @@
     ViewBag.Title = "Index";
 }
 
+@if (Session["UsuarioAutenticado"] == null || (bool)Session["UsuarioAutenticado"] != true)
+{
+
+    <script>window.location.href = `/Usuario`;</script>
+
+}
 
 <div class="container text-center mt-5">
     <h1 class="display-4">¡Bienvenido!</h1>

@@ -12,6 +12,10 @@ namespace registroSocial
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
+            routes.IgnoreRoute("RegistroSocial/editarRegistroSocial");
+            routes.IgnoreRoute("RegistroSocial/guardarRegistroSocial");
+            routes.IgnoreRoute("RegistroSocial/eliminarRegistroSocial");
+
 
             routes.MapRoute(
                 name: "Default",

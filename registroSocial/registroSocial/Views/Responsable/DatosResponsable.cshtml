@@ -4,6 +4,10 @@
 }
 
 <h2>Listar Responsables</h2>
+@if (Session["UsuarioAutenticado"] == null || (bool)Session["UsuarioAutenticado"] != true) {
+
+    <script> window.location.href = `/Usuario`;</script>
+}
 
 <div id="tablaBusquedaResposable">
 
