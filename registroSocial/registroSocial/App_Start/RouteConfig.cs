@@ -13,7 +13,7 @@ namespace registroSocial
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.IgnoreRoute("RegistroSocial/editarRegistroSocial");
-            routes.IgnoreRoute("RegistroSocial/guardarRegistroSocial");
+            //routes.IgnoreRoute("RegistroSocial/guardarRegistroSocial");
             routes.IgnoreRoute("RegistroSocial/eliminarRegistroSocial");
 
 
