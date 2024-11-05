@@ -137,9 +137,9 @@
 
         <!-- Botón Guardar Cambios -->
         <div class="row mb-4 mt-4">
-            <button onclick="guardarCambios()" class="btn btn-danger">GUARDAR CAMBIOS</button>
+            <button type="button" onclick="guardarCambios()" class="btn btn-danger">GUARDAR CAMBIOS</button>
         </div>
-
+        <div id="errorLog" style="color: red; font-weight: bold; display: none;"></div>
     </form>
 </div>
 
@@ -240,9 +240,27 @@
 
 
 
-    async function guardarCambios() {
+    async function guardarCambios(event) {
+        // Prevents the default form submission behavior
+        
+
+        // Reference to error log container
+        const errorLog = document.getElementById('errorLog');
+
+        // Clear previous errors
+        errorLog.style.display = 'none';
+        errorLog.innerText = '';
+
+        // Function to display errors
+        function logError(message) {
+            errorLog.style.display = 'block';
+            errorLog.innerText = message;
+            console.error(message);  // Also logs to console
+        }
+
         const id = obtenerParametroUrl('id');
         console.log(id);
+
         // Collect general data
         const datosGenerales = {
             FechaAplicacion: document.getElementById('fechaAplicacion').value,
@@ -290,32 +308,86 @@
             responsables: responsables
         };
 
-        // Debugging: Log the data to be sent
-        console.log("Datos a enviar:", JSON.stringify(datos, null, 2));
-
         try {
-            fetch(`/RegistroSocial/EditarRegistroSocial/${id}`, {
-                method: 'POST',  // Using POST to ensure it works without relying on PUT
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(datos)  // 'datos' should match the structure of RegistroSocialCLS
-            }).then(res => {
-                if (res.ok) {
-                    alert("registro guardado");
-                    window.location.href = `http://localhost:64899/DatosGenerales/Busqueda`;
-                    return res.json();  // Si tu API retorna un JSON, puedes procesarlo aquí
-                } else {
-                    throw new Error('Error en la respuesta del servidor');  // Maneja el caso donde la respuesta no es ok
+            // Show authentication modal
+            const loginResult = await Swal.fire({
+                title: 'Autenticación Requerida',
+                html: `
+                <div class="login-container">
+                    <input type="text" id="usuario" class="swal2-input" placeholder="Usuario">
+                    <input type="password" id="password" class="swal2-input" placeholder="Contraseña">
+                </div>
+                `,
+                confirmButtonText: 'Verificar',
+                focusConfirm: false,
+                preConfirm: () => {
+                    const usuario = Swal.getPopup().querySelector('#usuario').value;
+                    const password = Swal.getPopup().querySelector('#password').value;
+
+                    if (!usuario || !password) {
+                        Swal.showValidationMessage("Por favor, complete todos los campos");
+                        return null;
+                    }
+
+                    return { usuario, password };
                 }
             });
 
+            if (!loginResult.isConfirmed || !loginResult.value) return;
 
+            const { usuario, password } = loginResult.value;
+
+            // Verify credentials with the server
+            const authResponse = await fetch('/Usuario/verificarPassword', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ usuario, password })
+            });
+
+            if (!authResponse.ok) {
+                throw new Error("Error de autenticación");
+            }
+
+            const authData = await authResponse.json();
+
+            if (authData !== 1) {
+                await Swal.fire("Error", "Usuario o contraseña incorrectos.", "error");
+                return;
+            }
+
+            // Credentials verified, save the record
+            const saveResponse = await fetch(`/RegistroSocial/editarRegistroSocial/${id}`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(datos)
+            });
+
+            if (!saveResponse.ok) {
+                throw new Error('Error en la respuesta del servidor');
+            }
+
+            await Swal.fire("Éxito", "Registro guardado con éxito.", "success");
+
+            // Instead of direct redirect, use a confirmation modal to proceed
+            const redirectConfirm = await Swal.fire({
+                title: "Registro actualizado",
+                text: "¿Desea volver a la página de búsqueda?",
+                icon: "success",
+                showCancelButton: true,
+                confirmButtonText: "Sí",
+                cancelButtonText: "No"
+            });
+
+            if (redirectConfirm.isConfirmed) {
+                window.location.href = 'http://localhost:64899/DatosGenerales/Busqueda';
+            }
 
         } catch (error) {
-            console.error('Error en la actualización del registro:', error);
-            alert('Error en la actualización del registro. Intente nuevamente.');
+            logError("Hubo un error al actualizar el registro. Intente nuevamente.");
+            Swal.fire("Error", "Hubo un error al actualizar el registro. Intente nuevamente.", "error");
         }
     }
 
-
     window.onload = cargarDatos;
+
 </script>

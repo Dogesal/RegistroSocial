@@ -408,31 +408,33 @@ namespace Capa_Datos
                     }
 
                     // 3. Modificar datos de responsables
-                    foreach (var responsable in registroSocialR.responsables)
+                    if (registroSocialR.responsables != null)
                     {
-                        using (SqlCommand cmd = new SqlCommand("EditarResponsableXIDdatosGenerales", cn, transaction))
+                        foreach (var responsable in registroSocialR.responsables)
                         {
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@ID_datos_generales", id);
-                            cmd.Parameters.AddWithValue("@Nombre", responsable.NombreResponsable);
-                            cmd.Parameters.AddWithValue("@edad", responsable.Edad);
-                            cmd.Parameters.AddWithValue("@DNI", responsable.DNI);
-                            cmd.Parameters.AddWithValue("@Ocupacion", responsable.Ocupacion);
-                            cmd.Parameters.AddWithValue("@Parentesco", responsable.Parentesco);
-                            cmd.Parameters.AddWithValue("@Celular", responsable.CelularResponsable);
-                            cmd.Parameters.AddWithValue("@GradoInstruccion", responsable.GradoInstruccion);
+                            using (SqlCommand cmd = new SqlCommand("EditarResponsableXIDdatosGenerales", cn, transaction))
+                            {
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@ID_datos_generales", id);
+                                cmd.Parameters.AddWithValue("@Nombre", responsable.NombreResponsable);
+                                cmd.Parameters.AddWithValue("@edad", responsable.Edad);
+                                cmd.Parameters.AddWithValue("@DNI", responsable.DNI);
+                                cmd.Parameters.AddWithValue("@Ocupacion", responsable.Ocupacion);
+                                cmd.Parameters.AddWithValue("@Parentesco", responsable.Parentesco);
+                                cmd.Parameters.AddWithValue("@Celular", responsable.CelularResponsable);
+                                cmd.Parameters.AddWithValue("@GradoInstruccion", responsable.GradoInstruccion);
 
-                            try
-                            {
-                                filas += cmd.ExecuteNonQuery();
-                            }
-                            catch (Exception e)
-                            {
-                                errores.AppendLine($"Error al modificar datos del responsable {responsable.NombreResponsable}: " + e.Message);
+                                try
+                                {
+                                    filas += cmd.ExecuteNonQuery();
+                                }
+                                catch (Exception e)
+                                {
+                                    errores.AppendLine($"Error al modificar datos del responsable {responsable.NombreResponsable}: " + e.Message);
+                                }
                             }
                         }
                     }
-
                     // Confirmar la transacción si todas las operaciones son exitosas
                     if (errores.Length == 0)
                     {

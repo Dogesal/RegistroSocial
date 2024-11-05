@@ -14,35 +14,74 @@ function Editar(id){
 }
 
 function Eliminar(id) {
+    // Show confirmation dialog
     ConfirmacionSwing("¿Está seguro de que desea eliminar este registro?", "Confirmación")
         .then((result) => {
-            if (result.isConfirmed) {
-                // Si el usuario confirma, realizar la eliminación
-                fetch(`/RegistroSocial/eliminarRegistroSocial/?id=${id}`)
-                    .then(response => {
-                        if (response.ok) {
-                            // Mostrar el mensaje de éxito después de que se elimine el registro
-                            Swal.fire({
-                                title: "Borrado!",
-                                text: "El registro fue borrado.",
-                                icon: "success"
-                            });
+            if (!result.isConfirmed) {
+                console.log("Eliminación cancelada.");
+                return;
+            }
 
-                            // Recargar la página después de un breve retraso para permitir que el usuario vea el mensaje
-                            setTimeout(() => {
-                                window.location.reload(); // Recargar la página
-                            }, 1500); // 1500 milisegundos (1.5 segundos)
+            // Show authentication modal
+            Swal.fire({
+                title: 'Autenticación Requerida',
+                html:
+                    '<div class="login-container">' +
+                    '<input type="text" id="usuario" class="swal2-input" placeholder="Usuario">' +
+                    '<input type="password" id="password" class="swal2-input" placeholder="Contraseña">' +
+                    '</div>',
+                confirmButtonText: 'Verificar',
+                focusConfirm: false,
+                preConfirm: () => {
+                    const usuario = Swal.getPopup().querySelector('#usuario').value;
+                    const password = Swal.getPopup().querySelector('#password').value;
+
+                    if (!usuario || !password) {
+                        Swal.showValidationMessage("Por favor, complete todos los campos");
+                    }
+
+                    return { usuario, password };
+                }
+            }).then((loginResult) => {
+                if (!loginResult.isConfirmed) return;
+
+                const { usuario, password } = loginResult.value;
+
+                // Verify credentials with server
+                return fetch('/Usuario/verificarPassword', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ usuario, password })
+                }).then(response => response.json())
+                  .then(data => {
+                        if (data === 1) {
+                            console.log(data)
+                            return fetch(`/RegistroSocial/eliminarRegistroSocial/${id}`);
                         } else {
-                            ErrorSwing("Error al eliminar el registro.");
+                            // Invalid credentials
+                            Swal.fire("Error", "Usuario o contraseña incorrectos.", "error");
+                            throw new Error("Invalid credentials");
                         }
                     })
+                    .then(response => {
+
+                        Swal.fire({
+                            title: "Borrado!",
+                            text: "El registro fue borrado.",
+                            icon: "success"
+                        });
+                        setTimeout(() => {
+                            window.location.reload();
+                        }, 1500);
+                    })
                     .catch(error => {
-                        ErrorSwing("Ocurrió un error de red: " + error.message);
+                        if (error.message !== "Invalid credentials") {
+                            Swal.fire("Error", "Ocurrió un error de red: " + error.message, "error");
+                        }
                     });
-            } else {
-                // Si el usuario cancela, no hacer nada
-                console.log("Eliminación cancelada.");
-            }
+            });
         });
 }
 
