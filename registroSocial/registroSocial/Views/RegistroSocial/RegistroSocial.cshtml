@@ -33,8 +33,16 @@
         </div>
         <div class="col-md-3">
             <label class="form-label">Servicio:</label>
-            <input type="text" class="form-control" name="servicio">
-        </div>
+            <select type="text" class="form-control" name="servicio">
+                <option value="CIRUGIA">CIRUGIA</option>
+                <option value="PEDIATRIA">PEDIATRIA</option>
+                <option value="GINECOLOGIA">GINECOLOGIA</option>
+                <option value="NEONATOLOGIA">NEONATOLOGIA</option>
+                <option value="MEDICINA">MEDICINA</option>
+                <option value="UCI">UCI</option>
+            </select>
+
+</div>
         <div class="col-md-3">
             <label class="form-label">Cama:</label>
             <input type="text" class="form-control" name="cama">
@@ -62,12 +70,12 @@
         <div class="col-md-3">
             <label class="form-label">Estado Civil:</label>
             <select class="form-select" name="estado_civil">
-                <option value="S">Soltero/a</option>
-                <option value="CA">Casado/a</option>
-                <option value="CO">Conviviente</option>
-                <option value="SE">Separado/a</option>
-                <option value="VI">Viudo/a</option>
-                <option value="D">Divorciado/a</option>
+                <option value="SOLTERO">Soltero/a</option>
+                <option value="CASADO">Casado/a</option>
+                <option value="CONVIVIENTE">Conviviente</option>
+                <option value="SEPARADO">Separado/a</option>
+                <option value="VIUDO">Viudo/a</option>
+                <option value="DIVORCIADO">Divorciado/a</option>
             </select>
         </div>
     </div>
@@ -76,13 +84,13 @@
         <div class="col-md-3">
             <label class="form-label">Grado de Instrucción:</label>
             <select class="form-select" name="grado_instruccion" onchange="toggleExtraFieldPaciente(this)">
-                <option value="IL">Iletrado/a</option>
-                <option value="PC">Primaria Completa</option>
-                <option value="PI">Primaria Incompleta</option>
-                <option value="SC">Secundaria Completa</option>
-                <option value="SI">Secundaria Incompleta</option>
-                <option value="SU">Superior Universitaria</option>
-                <option value="ST">Superior Técnica</option>
+                <option value="ILETRADO">Iletrado/a</option>
+                <option value="PRIMARIA COMPLETA">Primaria Completa</option>
+                <option value="PRIMARIA INCOMPLETA">Primaria Incompleta</option>
+                <option value="SECUNDARIA COMPLETA">Secundaria Completa</option>
+                <option value="SECUNDARIA INCOMPLETA">Secundaria Incompleta</option>
+                <option value="SUPERIOR UNIVERSITARIO">Superior Universitaria</option>
+                <option value="SUPERIOR TECNICO">Superior Técnica</option>
             </select>
         </div>
         <div class="col-md-3">

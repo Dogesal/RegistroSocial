@@ -49,7 +49,7 @@ function pintar(objPintar, objBuscar) {
 
 
 
-            contenido += `<div class="container" id="divTabla">`;
+            contenido += `<div class="container-fluid" id="divTabla">`;
 
             contenido += generarTabla(objPintar, res);
 

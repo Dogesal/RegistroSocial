@@ -16,45 +16,46 @@
 <body>
  
     <!-- Menú de navegación fijo en la parte superior -->
-    <div class="fluid">
+    <div class="container-fluid">
         <div class="">
             @if (Session["UsuarioAutenticado"] != null && (bool)Session["UsuarioAutenticado"] == true)
             {
-                <!-- Menú de Navegación con ancho de columna 4 -->
-                <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #39A6A3; height:auto ; width:100%">
+                <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #39A6A3; height:auto; width:100%;">
                     <div class="container">
-                        <div class="d-flex justify-content-start" style="height:60px">
-                            <img src="~/img/hospital logo.png" />
+                        <div class="d-flex justify-content-start" style="height:60px;">
+                            <img src="~/img/hospital logo.png" alt="Hospital Logo" />
                         </div>
 
+                        <!-- Título del menú -->
                         @Html.ActionLink("FICHA DE REGISTRO SOCIAL", "Index", "DatosGenerales", new { area = "" }, new { @class = "navbar-brand fw-bold" })
-                        <button class="navbar-toggler" type="button">
+
+                        <!-- Botón para el menú colapsable en pantallas pequeñas -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+
+                        <!-- Menú desplegable (se colapsa en pantallas pequeñas) -->
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end w-100">
+                                <!-- Opción: Nuevo Registro -->
                                 <li class="nav-item">
                                     @Html.ActionLink("Nuevo Registro", "RegistroSocial", "RegistroSocial", new { area = "" }, new { @class = "nav-link" })
                                 </li>
-                                <li class="nav-item">
-                                    <div class="nav-link"> | </div>
-                                </li>
+                                
+                                <!-- Opción: Búsqueda -->
                                 <li class="nav-item">
                                     @Html.ActionLink("Búsqueda", "Busqueda", "DatosGenerales", new { area = "" }, new { @class = "nav-link" })
                                 </li>
-                                <li class="nav-item">
-                                    <div class="nav-link"> | </div>
-                                </li>
+                               
+                                <!-- Opción: Cerrar sesión -->
                                 <li class="nav-item d-flex">
-                                    <button class="btn btn-danger" onclick="CerrarSesion()" > CERRAR SESION </button>
+                                    <button class="btn btn-danger" onclick="CerrarSesion()"> CERRAR SESION </button>
                                 </li>
-                            </ul>
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end w-100">
-                             
                             </ul>
                         </div>
                     </div>
                 </nav>
+
             }
 
 

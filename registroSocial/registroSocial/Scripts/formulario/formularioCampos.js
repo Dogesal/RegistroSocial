@@ -39,13 +39,13 @@
                 <div class="col-md-3">
                     <label class="form-label">Grado de Instrucción:</label>
                     <select class="form-select" name="grado_instruccion_r[]" onchange="toggleExtraField(this, ${contador})">
-                        <option value="IL">Iletrado/a</option>
-                        <option value="PC">Primaria Completa</option>
-                        <option value="PI">Primaria Incompleta</option>
-                        <option value="SC">Secundaria Completa</option>
-                        <option value="SI">Secundaria Incompleta</option>
-                        <option value="SU">Superior Universitaria</option>
-                        <option value="ST">Superior Técnica</option>
+                        <option value="ILETRADO">Iletrado/a</option>
+                        <option value="PRIMARIA COMPLETA">Primaria Completa</option>
+                        <option value="PRIMARIA INCOMPLETA">Primaria Incompleta</option>
+                        <option value="SECUNDARIA COMPLETA">Secundaria Completa</option>
+                        <option value="SECUNDARIA INCOMPLETA">Secundaria Incompleta</option>
+                        <option value="SUPERIOR UNIVERSITARIO">Superior Universitaria</option>
+                        <option value="SUPERIOR TECNICO">Superior Técnica</option>
                     </select>
                 </div>
                 <div class="col-md-3" id="extra-field-container${contador}" style="display: none;">
@@ -63,7 +63,7 @@
    
     function toggleExtraField(selectElement, id) {
         const extraField = document.getElementById(`extra-field-container${id}`);
-        if (selectElement.value === 'SU' || selectElement.value === 'ST' || selectElement.value === 'PI' || selectElement.value === 'SI') {
+        if (selectElement.value === 'SUPERIOR UNIVERSITARIO' || selectElement.value === 'SUPERIOR TECNICO' || selectElement.value === 'PRIMARIA INCOMPLETA' || selectElement.value === 'SECUNDARIA INCOMPLETA') {
             extraField.style.display = 'block';
         } else {
             extraField.style.display = 'none';
@@ -81,7 +81,7 @@
 
     function toggleExtraFieldPaciente(selectElement) {
         const extraField = document.getElementById(`extra-field-paciente`);
-        if (selectElement.value === 'SU' || selectElement.value === 'ST' || selectElement.value === 'PI' || selectElement.value === 'SI') {
+        if (selectElement.value === 'SUPERIOR UNIVERSITARIO' || selectElement.value === 'SUPERIOR TECNICO' || selectElement.value === 'PRIMARIA INCOMPLETA' || selectElement.value === 'SECUNDARIA INCOMPLETA') {
             extraField.style.display = 'block';
         } else {
             extraField.style.display = 'none';
