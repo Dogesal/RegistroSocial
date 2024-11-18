@@ -1,0 +1,25 @@
+﻿@{
+    var usuarioAutenticado = Context.Session.GetString("UsuarioAutenticado");
+    var nombreUsuario = Context.Session.GetString("NombreUsuario");
+}
+@{
+    ViewBag.Title = "Busqueda";
+}
+@if (usuarioAutenticado == null || nombreUsuario == null)
+{
+
+    <script>window.location.href = `/Usuario`;</script>
+
+}
+
+<h2>Busqueda</h2>
+
+<div id="tablaBusquedaRegistro">
+
+
+
+</div>
+<script src="~/js/scripts/generic.js"></script>
+<script src="~/js/scripts/datosgenerales.js"></script>
+
+

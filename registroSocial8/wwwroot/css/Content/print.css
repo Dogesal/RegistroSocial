@@ -1,0 +1,90 @@
+﻿/* Print-specific styles */
+@media print {
+
+    nav, .navbar, .navbar-brand, .nav-item {
+        display: none !important;
+    }
+
+    /* Ensure main content (RenderBody) is visible */
+    main {
+        display: block !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Additional layout tweaks if needed */
+    .container {
+        width: 160% !important;
+        max-width: 100% !important;
+    }
+    .btn-primary {
+        display: none;
+    }
+
+    /* General font size and container adjustments */
+    body {
+        font-size: 10px; /* Smaller font size for print */
+    }
+
+    /* Force container to fit page */
+    .container {
+        width: 120%;
+        max-width: 120%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Flex column styling */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0; /* Remove any space between columns */
+    }
+
+    /* Set specific column widths */
+    .col-md-3 {
+        flex: 0 0 24%; /* About 1/4 width for 4-column layout */
+        max-width: 24%;
+    }
+
+    .col-md-4 {
+        flex: 0 0 32%; /* About 1/3 width for 3-column layout */
+        max-width: 32%;
+    }
+
+    .col-md-6 {
+        flex: 0 0 49%; /* About 1/2 width for 2-column layout */
+        max-width: 49%;
+    }
+
+    .col-md-12 {
+        flex: 0 0 120%; /* Full width for single-column */
+        max-width: 100%;
+    }
+
+    /* Titles and headers */
+    h3, h5 {
+        font-size: 1em;
+        text-align: center;
+        margin: 0;
+    }
+
+    /* Form controls and labels */
+    label {
+        font-size: 0.9em;
+    }
+
+    .form-control {
+        font-size: 0.9em;
+        padding: 0.2em;
+        height: auto; /* Remove any fixed height */
+    }
+
+    /* Page size adjustments */
+    @page {
+        size: A4;
+        margin: 10mm; /* Adjust these values as needed */
+    }
+}
+

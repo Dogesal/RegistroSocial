@@ -1,0 +1,46 @@
+﻿@{
+    var usuarioAutenticado = Context.Session.GetString("UsuarioAutenticado");
+    var nombreUsuario = Context.Session.GetString("NombreUsuario");
+}
+@{
+    ViewBag.Title = "Index";
+}
+@if (usuarioAutenticado == null || nombreUsuario == null)
+{
+
+    <script>window.location.href = `/Usuario`;</script>
+}
+
+<div class="container text-center mt-5">
+    <h1 class="display-4" id="nombreUsuario">¡Bienvenido! </h1>
+    <div id="greeting" class="lead"></div>
+    <p class="mt-3">Estamos encantados de tenerte aquí. ¡Explora nuestros registros!</p>
+    @Html.ActionLink("Ver Registros", "Busqueda", "DatosGenerales", new { area = "" }, new { @class = "btn btn-primary btn-lg mt-4" })
+</div>
+
+<script>
+    function getGreeting() {
+        const hours = new Date().getHours();
+        let greeting;
+        let bgColor; // Variable to store the background color
+
+        if (hours < 12) {
+            greeting = "¡Buenos días!";
+            bgColor = "#FFF9C4"; // Light yellow for morning
+        } else if (hours < 18) {
+            greeting = "¡Buenas tardes!";
+            bgColor = "#BBDEFB"; // Light blue for afternoon
+        } else {
+            greeting = "¡Buenas noches!";
+            bgColor = "#455A64"; // Dark grayish-blue for evening
+        }
+
+        document.getElementById("greeting").textContent = greeting;
+        document.body.style.backgroundColor = bgColor;
+        document.body.style.color = hours >= 18 ? "#ffffff" : "#000000";
+        
+    }
+
+
+    window.onload = getGreeting;
+</script>

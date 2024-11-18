@@ -1,0 +1,15 @@
+C:\Users\HDHVCA\Documents\git\Capa Datos\bin\Debug\net8.0\Capa Datos.deps.json
+C:\Users\HDHVCA\Documents\git\Capa Datos\bin\Debug\net8.0\Capa Datos.dll
+C:\Users\HDHVCA\Documents\git\Capa Datos\bin\Debug\net8.0\Capa Datos.pdb
+C:\Users\HDHVCA\Documents\git\Capa Datos\bin\Debug\net8.0\Capa Entidad.dll
+C:\Users\HDHVCA\Documents\git\Capa Datos\bin\Debug\net8.0\Capa Entidad.pdb
+C:\Users\HDHVCA\Documents\git\Capa Datos\obj\Debug\net8.0\Capa Datos.csproj.AssemblyReference.cache
+C:\Users\HDHVCA\Documents\git\Capa Datos\obj\Debug\net8.0\Capa Datos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HDHVCA\Documents\git\Capa Datos\obj\Debug\net8.0\Capa Datos.AssemblyInfoInputs.cache
+C:\Users\HDHVCA\Documents\git\Capa Datos\obj\Debug\net8.0\Capa Datos.AssemblyInfo.cs
+C:\Users\HDHVCA\Documents\git\Capa Datos\obj\Debug\net8.0\Capa Datos.csproj.CoreCompileInputs.cache
+C:\Users\HDHVCA\Documents\git\Capa Datos\obj\Debug\net8.0\Capa Datos.csproj.Up2Date
+C:\Users\HDHVCA\Documents\git\Capa Datos\obj\Debug\net8.0\Capa Datos.dll
+C:\Users\HDHVCA\Documents\git\Capa Datos\obj\Debug\net8.0\refint\Capa Datos.dll
+C:\Users\HDHVCA\Documents\git\Capa Datos\obj\Debug\net8.0\Capa Datos.pdb
+C:\Users\HDHVCA\Documents\git\Capa Datos\obj\Debug\net8.0\ref\Capa Datos.dll

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "DatosResponsable";
+    var usuarioAutenticado = Context.Session.GetString("UsuarioAutenticado");
+    var nombreUsuario = Context.Session.GetString("NombreUsuario");
+}
+
+@if (usuarioAutenticado == null || nombreUsuario == null)
+{
+
+    <script>window.location.href = `/Usuario`;</script>
+}
+
+<div id="tablaBusquedaResposable">
+
+
+
+</div>
+
+<script src="~/js/scripts/generic.js"></script>
+<script src="~/js/scripts/responsable.js"></script>

@@ -1,0 +1,14 @@
+C:\Users\HDHVCA\Documents\git\Capa Entidad\bin\Debug\net8.0\Capa_Entidad.deps.json
+C:\Users\HDHVCA\Documents\git\Capa Entidad\bin\Debug\net8.0\Capa_Entidad.dll
+C:\Users\HDHVCA\Documents\git\Capa Entidad\bin\Debug\net8.0\Capa_Entidad.pdb
+C:\Users\HDHVCA\Documents\git\Capa Entidad\obj\Debug\net8.0\Capa_Entidad.csproj.AssemblyReference.cache
+C:\Users\HDHVCA\Documents\git\Capa Entidad\obj\Debug\net8.0\Capa_Entidad.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HDHVCA\Documents\git\Capa Entidad\obj\Debug\net8.0\Capa_Entidad.AssemblyInfoInputs.cache
+C:\Users\HDHVCA\Documents\git\Capa Entidad\obj\Debug\net8.0\Capa_Entidad.AssemblyInfo.cs
+C:\Users\HDHVCA\Documents\git\Capa Entidad\obj\Debug\net8.0\Capa_Entidad.csproj.CoreCompileInputs.cache
+C:\Users\HDHVCA\Documents\git\Capa Entidad\obj\Debug\net8.0\Capa_Entidad.dll
+C:\Users\HDHVCA\Documents\git\Capa Entidad\obj\Debug\net8.0\refint\Capa_Entidad.dll
+C:\Users\HDHVCA\Documents\git\Capa Entidad\obj\Debug\net8.0\Capa_Entidad.pdb
+C:\Users\HDHVCA\Documents\git\Capa Entidad\obj\Debug\net8.0\ref\Capa_Entidad.dll
+C:\Users\HDHVCA\Documents\git\Capa Entidad\bin\Debug\net8.0\Capa_Entidad.runtimeconfig.json
+C:\Users\HDHVCA\Documents\git\Capa Entidad\obj\Debug\net8.0\Capa_Entidad.genruntimeconfig.cache

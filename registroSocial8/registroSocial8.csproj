@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\Content\bootstrap-theme.css" />
+    <None Include="wwwroot\css\Content\bootstrap-theme.min.css" />
+    <None Include="wwwroot\css\Content\bootstrap.css" />
+    <None Include="wwwroot\css\Content\bootstrap.min.css" />
+    <None Include="wwwroot\css\Content\print.css" />
+    <None Include="wwwroot\css\Content\Site.css" />
+    <None Include="wwwroot\css\Content\tabla.css" />
+    <None Include="wwwroot\img\hospital logo.png" />
+    <None Include="wwwroot\js\Scripts\bootstrap.js" />
+    <None Include="wwwroot\js\Scripts\bootstrap.min.js" />
+    <None Include="wwwroot\js\Scripts\datosGenerales.js" />
+    <None Include="wwwroot\js\Scripts\formulario\controladorFormulario.js" />
+    <None Include="wwwroot\js\Scripts\formulario\formularioCampos.js" />
+    <None Include="wwwroot\js\Scripts\generic.js" />
+    <None Include="wwwroot\js\Scripts\jquery-1.10.2.intellisense.js" />
+    <None Include="wwwroot\js\Scripts\jquery-1.10.2.js" />
+    <None Include="wwwroot\js\Scripts\jquery-1.10.2.min.js" />
+    <None Include="wwwroot\js\Scripts\jquery-1.10.2.min.map" />
+    <None Include="wwwroot\js\Scripts\modernizr-2.6.2.js" />
+    <None Include="wwwroot\js\Scripts\Paciente.js" />
+    <None Include="wwwroot\js\Scripts\responsable.js" />
+    <None Include="wwwroot\js\Scripts\sweetalert.js" />
+    <None Include="wwwroot\js\Scripts\usuario\sesion.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.3.0" />
+    <PackageReference Include="Microsoft.AspNet.Razor" Version="3.3.0" />
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Capa Entidad\Capa_Entidad.csproj" />
+    <ProjectReference Include="..\Capa Negocio\Capa_Negocio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

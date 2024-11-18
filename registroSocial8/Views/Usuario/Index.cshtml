@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+
+    /* Estilos para centrar el formulario */
+    body, html {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f7f7f7;
+    }
+
+    /* Estilos del contenedor */
+    .login-container {
+        width: 300px;
+        padding: 2rem;
+        background-color: #ffffff;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    /* Estilos de los elementos del formulario */
+    h2 {
+        margin-bottom: 1.5rem;
+        color: #333333;
+    }
+
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 0.75rem;
+        margin: 0.5rem 0;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+    }
+
+    button {
+        width: 100%;
+        padding: 0.75rem;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+    .error-message {
+        color: #e74c3c;
+        margin-top: 1rem;
+        display: none;
+    }
+</style>
+
+<div class="login-container container-fluid">
+    <h2>Inicio de Sesión</h2>
+    <input type="text" id="usuario" placeholder="Usuario" required>
+    <input type="password" id="password" placeholder="Contraseña" required>
+    <button onclick="login()">Ingresar</button>
+    <div class="error-message" id="error-message">Usuario o contraseña incorrectos.</div>
+</div>
+<script>// Función para realizar la solicitud AJAX
+           function login() {
+        const usuario = document.getElementById('usuario').value;
+        const password = document.getElementById('password').value;
+        const errorMessage = document.getElementById('error-message');
+
+        // Validar que los campos no estén vacíos
+        if (!usuario || !password) {
+            errorMessage.textContent = "Por favor, complete todos los campos.";
+            errorMessage.style.display = "block";
+            return;
+        }
+
+        // Enviar solicitud AJAX al endpoint de verificación
+        fetch('/Usuario/verificarPassword', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ usuario, password }) // Asegúrate de que se envíen como JSON
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data === 1) {
+                // Redirigir a la página de inicio si las credenciales son correctas
+                window.location.href = '/DatosGenerales/';
+            } else {
+                // Mostrar mensaje de error si las credenciales son incorrectas
+                errorMessage.textContent = "Usuario o contraseña incorrectos.";
+                errorMessage.style.display = "block";
+            }
+        })
+        .catch(error => {
+            console.error("Error al realizar la solicitud:", error);
+            errorMessage.textContent = "Ocurrió un error, intente nuevamente.";
+            errorMessage.style.display = "block";
+        });
+    }
+</script>
