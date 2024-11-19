@@ -5,15 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Capa_Datos;
 using Capa_Entidad;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Capa_Negocio
 {
-    public class ServiciosBL
+    public  class EstadoBL
     {
-        private readonly ServicioContextDAL _context;
+        private readonly EstadoContextDAL _context;
 
-        public ServiciosBL(ServicioContextDAL context)
+        public EstadoBL(EstadoContextDAL context)
         {
             if (context == null)
             {
@@ -25,31 +24,38 @@ namespace Capa_Negocio
 
 
 
-        public IEnumerable<ServicioCLS> ListarServicios()
+        public IEnumerable<EstadoCLS> ListarServicios()
         {
-            return _context.servicios.ToList();
+            return _context.estado.ToList();
         }
 
-        public ServicioCLS CrearServicio(ServicioCLS servicio)
+        public EstadoCLS traerEstadoId(int ID_estado)
         {
-            _context.servicios.Add(servicio);
-            _context.SaveChanges();
+            try {
 
-            return servicio;
+                return _context.estado.Find(ID_estado);
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception($"No se encontro: {e.Message}");
+            }
+
+           
         }
 
-        public ServicioCLS traerServicioNombre(string servicio)
+        public EstadoCLS traerEstadoNombre(string nombre)
         {
             try
             {
                 // Buscar el primer estado que coincida con el nombre
-                var estado = _context.servicios
-                                     .FirstOrDefault(e => e.nombre == servicio);
+                var estado = _context.estado
+                                     .FirstOrDefault(e => e.nombre == nombre);
 
                 if (estado == null)
                 {
                     // Si no se encuentra ningún estado, lanzar una excepción con un mensaje más específico
-                    throw new Exception($"No se encontró un servicio con el nombre '{servicio}'.");
+                    throw new Exception($"No se encontró un estado con el nombre '{nombre}'.");
                 }
 
                 return estado;
@@ -59,7 +65,16 @@ namespace Capa_Negocio
                 // Capturar cualquier excepción y lanzar un mensaje de error más informativo
                 throw new Exception($"Error al buscar el estado: {e.Message}", e);
             }
+
+
         }
 
+        public EstadoCLS CrearServicio(EstadoCLS estado)
+        {
+            _context.estado.Add(estado);
+            _context.SaveChanges();
+
+            return estado;
+        }
     }
 }

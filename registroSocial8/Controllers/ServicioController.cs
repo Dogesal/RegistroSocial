@@ -28,5 +28,12 @@ namespace registroSocial8.Controllers
             var servicios = _serviciosBL.ListarServicios();
             return new JsonResult(servicios);
         }
+
+        public JsonResult traerServicioNombre(string nombre)
+        {
+            // Usamos _serviciosBL ya inyectado, no es necesario crear una nueva instancia
+            var estado = _serviciosBL.traerServicioNombre(nombre);
+            return new JsonResult(estado);
+        }
     }
 }

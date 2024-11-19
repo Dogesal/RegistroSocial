@@ -22,4 +22,11 @@
     <ProjectReference Include="..\Capa Entidad\Capa_Entidad.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Capa_Negocio">
+      <HintPath>..\Capa Negocio\obj\Debug\net8.0\Capa_Negocio.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+
 </Project>

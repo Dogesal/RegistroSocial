@@ -10,12 +10,19 @@ namespace Capa_Negocio
 {
     public class RegistroSocialBL
     {
+        private readonly RegistroSocialDAL _registroSocialDAL;
+        public RegistroSocialBL(RegistroSocialDAL registroSocialDAL) {
+
+
+            _registroSocialDAL= registroSocialDAL;
+
+
+        }
+
         public RegistroSocialCLS registroSocial(int id)
         {
 
-            RegistroSocialDAL obj = new RegistroSocialDAL();
-
-            return obj.RegistroSocial(id);
+            return _registroSocialDAL.RegistroSocial(id);
 
 
 
@@ -23,25 +30,23 @@ namespace Capa_Negocio
 
         public string guardadRegistroSocial(RegistroSocialCLS registro)
         {
-            RegistroSocialDAL obj = new RegistroSocialDAL();
 
-            return obj.AgregarRegistroSocial(registro);
+            return _registroSocialDAL.AgregarRegistroSocial(registro);
 
         }
 
         public int EliminarRegistroSocial(int id)
         {
-            RegistroSocialDAL obj = new RegistroSocialDAL();
 
-            return obj.EliminarRegistroSocial(id);
+
+            return _registroSocialDAL.EliminarRegistroSocial(id);
 
         }
 
         public string editarRegistroSocial(int id, RegistroSocialCLS registroSocial)
         {
-            RegistroSocialDAL obj = new RegistroSocialDAL();
-
-            return obj.EditarRegistroSocial(id,registroSocial);
+        
+            return _registroSocialDAL.EditarRegistroSocial(id,registroSocial);
 
         }
     }

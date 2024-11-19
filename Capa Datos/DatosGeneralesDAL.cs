@@ -111,7 +111,7 @@ namespace Capa_Datos
                                 registro.FechaIngreso = drd["fecha_ingreso"] != DBNull.Value
                                     ? ((DateTime)drd["fecha_ingreso"]).ToString("dd-MM-yyyy")
                                     : DateTime.MinValue.ToString("dd-MM-yyyy");
-                                //registro.Servicio = drd["servicio"] != DBNull.Value ? drd["servicio"].ToString() : "";
+                                registro.Servicio = drd["servicio"] != DBNull.Value ? drd["servicio"].ToString() : "";
                                 registro.Cama = drd["cama"] != DBNull.Value ? drd["cama"].ToString() : "";
                                 registro.ModalidadIngreso = drd["modalidad_ingreso"] != DBNull.Value ? drd["modalidad_ingreso"].ToString() : "";
                                 registro.TipoFamilia = drd["tipo_familia"] != DBNull.Value ? drd["tipo_familia"].ToString() : "";

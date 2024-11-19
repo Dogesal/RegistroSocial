@@ -1,19 +1,8 @@
 ﻿async function guardarRegistroSocial() {
 
-    const servicioElement = document.querySelector('select[name="servicio"]');
+    const servicioElement = document.querySelector('select[name="servicio"]').value;
+    console.log(servicioElement)
 
-    if (servicioElement == null) {
-        console.log(servicioElement)
-        return 
-    }
-
-    if (servicioElement) {
-        const servicio = servicioElement.value;
-        // Usa la variable 'servicio'
-        console.log(servicio);
-    } else {
-        console.error("El elemento con name='servicio' no se encuentra en el DOM");
-    }   
     // Crear objeto para enviar
     const registroSocial = {
         paciente: {
@@ -28,12 +17,12 @@
             NumHijos: document.querySelector('input[name="numero_hijos"]').value,
             NumHermanos: document.querySelector('input[name="numero_hermanos"]').value,
             Seguro: getSeguro(), // Función para obtener seguro
-            DxMedico: document.querySelector('input[name="dx_medico"]').value,
+            DxMedico: document.querySelector('input[name="dx_medico"]').value
         },
         datos: {
             FechaIngreso: document.querySelector('input[name="fecha_ingreso"]').value,
             FechaAplicacion: document.querySelector('input[name="fecha_aplicacion"]').value,
-            Servicio: document.querySelector('input[name="servicio"]'),
+            
             Cama: document.querySelector('input[name="cama"]').value,
             ModalidadIngreso: getModalidadIngreso(), // Función para obtener modalidad de ingreso
             TipoFamilia: getTipoFamilia(), // Función para obtener tipo de familia
@@ -41,7 +30,14 @@
             DiagnosticoSocial: document.querySelector('textarea[name="diagnostico_social"]').value,
             AccionesRealizadas: getAccionesRealizadas(), // Función para obtener acciones realizadas
         },
-        responsables: getResponsables() // Función para obtener responsables
+        responsables: getResponsables(), // Función para obtener responsables
+        servicio: {
+            nombre: servicioElement
+        },
+        estado: {
+            nombre: "INGRESO"
+
+        }
     };
    
 

@@ -6,11 +6,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Capa_Entidad;
+using Capa_Negocio;
+
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
 namespace Capa_Datos
 {
     public class RegistroSocialDAL:CadenaDAL
     {
+        private readonly EstadoContextDAL _contextEstado;
+        private readonly ServicioContextDAL _contextServicio;
+
+        public RegistroSocialDAL(EstadoContextDAL contextEstado, ServicioContextDAL contextServicio)
+        {
+            _contextEstado = contextEstado;
+            _contextServicio = contextServicio;
+        }
+
+   
 
         public RegistroSocialCLS RegistroSocial(int id)
         {
@@ -199,6 +214,7 @@ namespace Capa_Datos
 
 
 
+
             return registroSocial;
 
 
@@ -211,12 +227,63 @@ namespace Capa_Datos
         {
             string GUARDADO="";
             int idpaciente;
+            EstadoCLS estadoCLS;
+            ServicioCLS servicioCLS;
+
+
             using (SqlConnection cn = new SqlConnection(cadenaConexion))
             {
                 try
                 {
                     cn.Open();
                     SqlTransaction transaction = cn.BeginTransaction();
+
+                   
+
+                    EstadoBL estadoBL = new EstadoBL(_contextEstado);
+                    ServiciosBL servicioBL = new ServiciosBL(_contextServicio);
+                    try
+                    {
+
+                        estadoCLS = _contextEstado.estado
+                                     .FirstOrDefault(e => e.nombre == registroSocial.estado.nombre);
+
+                        if (estadoCLS == null)
+                        {
+                            // Si no se encuentra ningún estado, lanzar una excepción con un mensaje más específico
+                            throw new Exception($"No se encontró un estado con el nombre '{registroSocial.estado.nombre}'.");
+                        }
+                     
+
+                    }
+                    catch (Exception e)
+                    {
+                        throw new Exception(e.Message);
+                    }
+
+
+                    try
+                    {
+
+
+                        servicioCLS = _contextServicio.servicios
+                                     .FirstOrDefault(e => e.nombre == registroSocial.servicio.nombre);
+
+                        if (estadoCLS == null)
+                        {
+                            // Si no se encuentra ningún estado, lanzar una excepción con un mensaje más específico
+                            throw new Exception($"No se encontró un estado con el nombre '{registroSocial.servicio.nombre}'.");
+                        }
+
+                    }
+                    catch (Exception e)
+                    {
+                        throw new Exception(e.Message);
+                    }
+
+
+
+
 
                     // Agregar Paciente
                     int pacienteId;
@@ -259,7 +326,8 @@ namespace Capa_Datos
                         cmdDatosGenerales.Parameters.AddWithValue("@ID_paciente", pacienteId);
                         cmdDatosGenerales.Parameters.AddWithValue("@fecha_aplicacion", registroSocial.datos.FechaAplicacion);
                         cmdDatosGenerales.Parameters.AddWithValue("@fecha_ingreso", registroSocial.datos.FechaIngreso);
-                        cmdDatosGenerales.Parameters.AddWithValue("@servicio", registroSocial.datos.Servicio);
+                        cmdDatosGenerales.Parameters.AddWithValue("@ID_servicio", estadoCLS.ID_estado);
+                        cmdDatosGenerales.Parameters.AddWithValue("@ID_estado", servicioCLS.ID_servicio);
                         cmdDatosGenerales.Parameters.AddWithValue("@cama", registroSocial.datos.Cama);
                         cmdDatosGenerales.Parameters.AddWithValue("@modalidad_ingreso", registroSocial.datos.ModalidadIngreso);
                         cmdDatosGenerales.Parameters.AddWithValue("@tipo_familia", registroSocial.datos.TipoFamilia);
@@ -307,6 +375,9 @@ namespace Capa_Datos
                             }
                         }
                     }
+
+
+                    
 
                     // Confirma la transacción
                     transaction.Commit();

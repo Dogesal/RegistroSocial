@@ -246,8 +246,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>smcgdpfb53</Fingerprint>
-      <Integrity>DHvdAwXH1rnQF8nnuCkIGPxiBA91kusIcGZuGBvHYzQ=</Integrity>
+      <Fingerprint>yxbptdmc7d</Fingerprint>
+      <Integrity>SgbbFh+FLLKX+851vyQm3+uL4+UQ4Nwu70JhzPcUpwI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Scripts\formulario\controladorFormulario.js'))</OriginalItemSpec>

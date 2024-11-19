@@ -1,5 +1,6 @@
 using System;
 using Capa_Datos;
+using Capa_Entidad;
 using Capa_Negocio;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,11 +18,26 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true; // Esencial para que funcione incluso con restricciones de cookies
 });
 
+//INICIO CONTEXTOS DE DATOS
+
 // Configurar el contexto de base de datos
 builder.Services.AddDbContext<ServicioContextDAL>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("cn"))
 );
+
+
+builder.Services.AddDbContext<EstadoContextDAL>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("cn"))
+);
+
+builder.Services.AddScoped<EstadoBL>();
 builder.Services.AddScoped<ServiciosBL>();
+builder.Services.AddScoped<RegistroSocialDAL>();
+builder.Services.AddScoped<RegistroSocialBL>();
+
+//FIN CONTEXTOS DE DATOS
+
+
 // Configure the HTTP request pipeline.
 var app = builder.Build();
 
@@ -41,7 +57,7 @@ app.UseSession();
 // Configurar el enrutamiento de las solicitudes HTTP
 app.UseRouting();
 
-// Habilitar la autorización (si la usas)
+// Habilitar la autorización 
 app.UseAuthorization();
 
 // Configurar la ruta predeterminada del controlador

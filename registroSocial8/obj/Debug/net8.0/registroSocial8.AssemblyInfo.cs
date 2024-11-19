@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("registroSocial8")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66902db7af264add487f47f0a43688058bdef7b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+56329e17b59273e92003298ae90da01e65ca170f")]
 [assembly: System.Reflection.AssemblyProductAttribute("registroSocial8")]
 [assembly: System.Reflection.AssemblyTitleAttribute("registroSocial8")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

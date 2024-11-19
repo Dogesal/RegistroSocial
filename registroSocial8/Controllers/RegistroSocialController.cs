@@ -9,6 +9,16 @@ namespace registroSocial.Controllers
 {
     public class RegistroSocialController : Controller
     {
+
+        private readonly RegistroSocialBL _registroSocialBL;
+
+        public RegistroSocialController(RegistroSocialBL registroSocialBL)
+        {
+            _registroSocialBL = registroSocialBL;
+        }
+
+
+
         // GET: RegistroSocial
         public IActionResult Index()
         {
@@ -18,29 +28,29 @@ namespace registroSocial.Controllers
         [HttpGet]
         public JsonResult traerRegistroSocial(int id)
         {
-            RegistroSocialBL registroBL = new RegistroSocialBL();
-            return new JsonResult(registroBL.registroSocial(id));
+            
+            return new JsonResult(_registroSocialBL.registroSocial(id));
         }
 
         [HttpPost]
         public JsonResult editarRegistroSocial(int id, [FromBody] RegistroSocialCLS registroSocialR)
         {
-            RegistroSocialBL registroBL = new RegistroSocialBL();
-            return new JsonResult(registroBL.editarRegistroSocial(id, registroSocialR));
+            
+            return new JsonResult(_registroSocialBL.editarRegistroSocial(id, registroSocialR));
         }
 
         [HttpPost]
         public JsonResult guardarRegistroSocial([FromBody] RegistroSocialCLS registroSocialR)
         {
-            RegistroSocialBL registroBL = new RegistroSocialBL();
-            return new JsonResult(registroBL.guardadRegistroSocial(registroSocialR));
+            
+            return new JsonResult(_registroSocialBL.guardadRegistroSocial(registroSocialR));
         }
 
         [HttpPost]
         public JsonResult eliminarRegistroSocial(int id)
         {
-            RegistroSocialBL registroBL = new RegistroSocialBL();
-            return new JsonResult(registroBL.EliminarRegistroSocial(id));
+           
+            return new JsonResult(_registroSocialBL.EliminarRegistroSocial(id));
         }
 
         public IActionResult RegistroSocial()

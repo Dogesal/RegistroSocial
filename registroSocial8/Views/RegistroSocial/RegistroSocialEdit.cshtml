@@ -146,10 +146,15 @@
 </div>
 
 <script>
-    function convertirFecha(fechaJson) {
-        const timestamp = parseInt(fechaJson.replace(/\/Date\((\d+)\)\//, "$1"), 10);
-        const date = new Date(timestamp);
-        return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+      function convertirFecha(fechaJson) {
+       if (!fechaJson) {
+          console.error('Error: fechaJson no es válido', fechaJson);
+          return ''; // Retorna una cadena vacía o un valor por defecto
+       }
+       
+       const timestamp = parseInt(fechaJson.replace(/\/Date\((\d+)\)\//, "$1"), 10);
+       const date = new Date(timestamp);
+       return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
     }
 
     function obtenerParametroUrl(nombre) {
@@ -167,29 +172,29 @@
         try {
             const response = await fetch(`/RegistroSocial/traerRegistroSocial/?id=${id}`);
             const data = await response.json();
+            console.log(data)
+            document.getElementById('fechaIngreso').value = convertirFecha(data.datos.fechaIngreso);
+            document.getElementById('fechaAplicacion').value = convertirFecha(data. datos.fechaAplicacion);
+            document.getElementById('servicio').value = data.datos.servicio;
+            document.getElementById('cama').value = data.datos.cama;
+            document.getElementById('accionesRealizadas').value = data.datos.accionesRealizadas;
+            document.getElementById('observacionesTipoFamilia').value = data.datos.observacionesFamilia;
+            document.getElementById('modalidadIngreso').value = data.datos.modalidadIngreso;
+            document.getElementById('tipoFamilia').value = data.datos.tipoFamilia;
+            document.getElementById('diagnosticoSocial').value = data.datos.diagnosticoSocial;
 
-            document.getElementById('fechaIngreso').value = convertirFecha(data.datos.FechaIngreso);
-            document.getElementById('fechaAplicacion').value = convertirFecha(data.datos.FechaAplicacion);
-            document.getElementById('servicio').value = data.datos.Servicio;
-            document.getElementById('cama').value = data.datos.Cama;
-            document.getElementById('accionesRealizadas').value = data.datos.AccionesRealizadas;
-            document.getElementById('observacionesTipoFamilia').value = data.datos.ObservacionesFamilia;
-            document.getElementById('modalidadIngreso').value = data.datos.ModalidadIngreso;
-            document.getElementById('tipoFamilia').value = data.datos.TipoFamilia;
-            document.getElementById('diagnosticoSocial').value = data.datos.DiagnosticoSocial;
-
-            document.getElementById('nombrePaciente').value = data.paciente.NombrePaciente;
-            document.getElementById('dni').value = data.paciente.DNI;
-            document.getElementById('edad').value = data.paciente.Edad;
-            document.getElementById('estadoCivil').value = data.paciente.EstadoCivil;
-            document.getElementById('gradoInstruccion').value = data.paciente.GradoInstruccion;
-            document.getElementById('direccion').value = data.paciente.Direccion;
-            document.getElementById('celular').value = data.paciente.CelularPaciente;
-            document.getElementById('ocupacion').value = data.paciente.Ocupacion;
-            document.getElementById('numHijos').value = data.paciente.NumHijos;
-            document.getElementById('numHermanos').value = data.paciente.NumHermanos;
-            document.getElementById('seguro').value = data.paciente.Seguro;
-            document.getElementById('dxMedico').value = data.paciente.DxMedico;
+            document.getElementById('nombrePaciente').value = data.paciente.nombrePaciente;
+            document.getElementById('dni').value = data.paciente.dni;
+            document.getElementById('edad').value = data.paciente.edad;
+            document.getElementById('estadoCivil').value = data.paciente.estadoCivil;
+            document.getElementById('gradoInstruccion').value = data.paciente.gradoInstruccion;
+            document.getElementById('direccion').value = data.paciente.direccion;
+            document.getElementById('celular').value = data.paciente.celularPaciente;
+            document.getElementById('ocupacion').value = data.paciente.ocupacion;
+            document.getElementById('numHijos').value = data.paciente.numHijos;
+            document.getElementById('numHermanos').value = data.paciente.numHermanos;
+            document.getElementById('seguro').value = data.paciente.seguro;
+            document.getElementById('dxMedico').value = data.paciente.dxMedico;
 
             const responsablesContainer = document.getElementById('responsablesContainer');
             responsablesContainer.innerHTML = '';  // Limpiar el contenedor
@@ -201,31 +206,31 @@
                     div.innerHTML = `
                     <div class="col-md-3">
                         <label>Responsable ${index + 1}:</label>
-                        <input type="text" class="form-control" id="nombreResponsable${index}" value="${responsable.NombreResponsable}">
+                        <input type="text" class="form-control" id="nombreResponsable${index}" value="${responsable.nombreResponsable}">
                     </div>
                     <div class="col-md-3">
                         <label>DNI:</label>
-                        <input type="text" class="form-control" id="dniResponsable${index}" value="${responsable.DNI}">
+                        <input type="text" class="form-control" id="dniResponsable${index}" value="${responsable.dni}">
                     </div>
                     <div class="col-md-3">
                         <label>Edad:</label>
-                        <input type="number" class="form-control" id="edadResponsable${index}" value="${responsable.Edad}">
+                        <input type="number" class="form-control" id="edadResponsable${index}" value="${responsable.edad}">
                     </div>
                     <div class="col-md-3">
                         <label>Parentesco:</label>
-                        <input type="text" class="form-control" id="parentescoResponsable${index}" value="${responsable.Parentesco}">
+                        <input type="text" class="form-control" id="parentescoResponsable${index}" value="${responsable.parentesco}">
                     </div>
                     <div class="col-md-3 mt-2">
                         <label>Celular:</label>
-                        <input type="tel" class="form-control" id="celularResponsable${index}" value="${responsable.CelularResponsable}">
+                        <input type="tel" class="form-control" id="celularResponsable${index}" value="${responsable.celularResponsable}">
                     </div>
                     <div class="col-md-3 mt-2">
                         <label>Ocupación:</label>
-                        <input type="text" class="form-control" id="ocupacionResponsable${index}" value="${responsable.Ocupacion}">
+                        <input type="text" class="form-control" id="ocupacionResponsable${index}" value="${responsable.ocupacion}">
                     </div>
                     <div class="col-md-3 mt-2">
                         <label>Grado de Instrucción:</label>
-                        <input type="text" class="form-control" id="gradoInstruccionResponsable${index}" value="${responsable.GradoInstruccion}">
+                        <input type="text" class="form-control" id="gradoInstruccionResponsable${index}" value="${responsable.gradoInstruccion}">
                     </div>
                     `;
                     responsablesContainer.appendChild(div);
@@ -244,6 +249,7 @@
 
     async function guardarCambios(event) {
         // Prevents the default form submission behavior
+        
         
 
         // Reference to error log container
@@ -303,11 +309,15 @@
             GradoInstruccion: document.getElementById(`gradoInstruccionResponsable${index}`).value
         }));
 
+        // const datosServicio = ["activo"]
+
         // Create main data object
         const datos = {
             paciente: datosPaciente,
             datos: datosGenerales,
-            responsables: responsables
+            responsables: responsables,
+            servicio: ,
+            estado:
         };
 
         try {
