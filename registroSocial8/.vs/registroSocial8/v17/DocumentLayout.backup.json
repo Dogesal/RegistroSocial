@@ -1,30 +1,94 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\HDHVCA\\Documents\\git\\registroSocial8\\",
+  "WorkspaceRootPath": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0B87B8F8-DB99-454A-B110-EB8322BB95CC}|..\\Capa Entidad\\Capa_Entidad.csproj|c:\\users\\hdhvca\\documents\\git\\capa entidad\\serviciocls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\registrosocial8\\wwwroot\\js\\scripts\\datosgenerales.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:wwwroot\\js\\scripts\\datosgenerales.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\hdhvca\\documents\\git\\registrosocial8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\registrosocial8\\wwwroot\\js\\scripts\\generic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:wwwroot\\js\\scripts\\generic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\registrosocial8\\views\\registrosocial\\registrosocialedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:views\\registrosocial\\registrosocialedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B87B8F8-DB99-454A-B110-EB8322BB95CC}|..\\Capa Entidad\\Capa_Entidad.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\capa entidad\\registrosocialcls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83FE8054-13B1-4725-90E1-794301076012}|..\\Capa Datos\\Capa_Datos.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\capa datos\\registrosocialdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83FE8054-13B1-4725-90E1-794301076012}|..\\Capa Datos\\Capa_Datos.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\capa datos\\datosgeneralesdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B87B8F8-DB99-454A-B110-EB8322BB95CC}|..\\Capa Entidad\\Capa_Entidad.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\capa entidad\\datosgeneralescls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B87B8F8-DB99-454A-B110-EB8322BB95CC}|..\\Capa Entidad\\Capa_Entidad.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\capa entidad\\datosgeneralespacientecls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B87B8F8-DB99-454A-B110-EB8322BB95CC}|..\\Capa Entidad\\Capa_Entidad.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\capa entidad\\responsablecls.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\registrosocial8\\views\\datosgenerales\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:views\\datosgenerales\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CCDB0120-BBFE-4B06-9F8B-3C037CA78E8E}|..\\Capa Negocio\\Capa_Negocio.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\capa negocio\\datosgeneralesbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\registrosocial8\\controllers\\datosgeneralescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:controllers\\datosgeneralescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\registrosocial8\\controllers\\registrosocialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:controllers\\registrosocialcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\registrosocial8\\views\\datosgenerales\\busqueda.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:views\\datosgenerales\\busqueda.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\registrosocial8\\views\\registrosocial\\registrosocial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:views\\registrosocial\\registrosocial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{83FE8054-13B1-4725-90E1-794301076012}|..\\Capa Datos\\Capa_Datos.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\capa datos\\cadenadal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\registrosocial8\\views\\registrosocial\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:views\\registrosocial\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\registrosocial8\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\registrosocial8\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCDB0120-BBFE-4B06-9F8B-3C037CA78E8E}|..\\Capa Negocio\\Capa_Negocio.csproj|c:\\users\\hdhvca\\documents\\git\\capa negocio\\serviciosbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{83FE8054-13B1-4725-90E1-794301076012}|..\\Capa Datos\\Capa_Datos.csproj|c:\\users\\hdhvca\\documents\\git\\capa datos\\serviciocontextdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\hdhvca\\documents\\git\\registrosocial8\\controllers\\serviciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\registrosocial8\\controllers\\serviciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:controllers\\serviciocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CCDB0120-BBFE-4B06-9F8B-3C037CA78E8E}|..\\Capa Negocio\\Capa_Negocio.csproj|c:\\users\\hdhvca\\documents\\git\\capa negocio\\datosgeneralesbl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\alan\\documents\\git\\registrosocial\\registrosocial\\registrosocial8\\controllers\\pacientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:controllers\\pacientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|c:\\users\\hdhvca\\documents\\git\\registrosocial8\\controllers\\pacientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{01E89A9E-5B12-4D74-B42F-A0E116AF7312}|registroSocial8.csproj|solutionrelative:controllers\\pacientecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HDHVCA\\Documents\\git\\Capa Entidad\\ServicioCLS.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HDHVCA\\Documents\\git\\Capa Negocio\\DatosGeneralesBL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HDHVCA\\Documents\\git\\Capa Negocio\\ServiciosBL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\HDHVCA\\Documents\\git\\Capa Datos\\ServicioContextDAL.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +98,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,94 +118,320 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ServicioCLS.cs",
-              "DocumentMoniker": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Entidad\\ServicioCLS.cs",
-              "RelativeDocumentMoniker": "..\\Capa Entidad\\ServicioCLS.cs",
-              "ToolTip": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Entidad\\ServicioCLS.cs*",
-              "RelativeToolTip": "..\\Capa Entidad\\ServicioCLS.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T22:45:28.126Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\HDHVCA\\Documents\\git\\registroSocial8\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\HDHVCA\\Documents\\git\\registroSocial8\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAcwBcAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T22:39:38.669Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ServicioController.cs",
-              "DocumentMoniker": "C:\\Users\\HDHVCA\\Documents\\git\\registroSocial8\\Controllers\\ServicioController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ServicioController.cs",
-              "ToolTip": "C:\\Users\\HDHVCA\\Documents\\git\\registroSocial8\\Controllers\\ServicioController.cs",
-              "RelativeToolTip": "Controllers\\ServicioController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAwwCAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T22:30:47.663Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DatosGeneralesBL.cs",
-              "DocumentMoniker": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Negocio\\DatosGeneralesBL.cs",
-              "RelativeDocumentMoniker": "..\\Capa Negocio\\DatosGeneralesBL.cs",
-              "ToolTip": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Negocio\\DatosGeneralesBL.cs",
-              "RelativeToolTip": "..\\Capa Negocio\\DatosGeneralesBL.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T22:25:47.41Z",
+              "Title": "generic.js",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\wwwroot\\js\\Scripts\\generic.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\Scripts\\generic.js",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\wwwroot\\js\\Scripts\\generic.js",
+              "RelativeToolTip": "wwwroot\\js\\Scripts\\generic.js",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAQwFwAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-19T03:21:34.764Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ServiciosBL.cs",
-              "DocumentMoniker": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Negocio\\ServiciosBL.cs",
-              "RelativeDocumentMoniker": "..\\Capa Negocio\\ServiciosBL.cs",
-              "ToolTip": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Negocio\\ServiciosBL.cs",
-              "RelativeToolTip": "..\\Capa Negocio\\ServiciosBL.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwBwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T22:25:10.164Z",
+              "Title": "RegistroSocialEdit.cshtml",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Views\\RegistroSocial\\RegistroSocialEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\RegistroSocial\\RegistroSocialEdit.cshtml",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Views\\RegistroSocial\\RegistroSocialEdit.cshtml",
+              "RelativeToolTip": "Views\\RegistroSocial\\RegistroSocialEdit.cshtml",
+              "ViewState": "AgIAAJ8AAAAAAAAAAAAAAKcAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-19T03:18:56.949Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "ServicioContextDAL.cs",
-              "DocumentMoniker": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Datos\\ServicioContextDAL.cs",
-              "RelativeDocumentMoniker": "..\\Capa Datos\\ServicioContextDAL.cs",
-              "ToolTip": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Datos\\ServicioContextDAL.cs*",
-              "RelativeToolTip": "..\\Capa Datos\\ServicioContextDAL.cs*",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBAAAAAIAAAAAAAAAA==",
+              "Title": "RegistroSocialCLS.cs",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\RegistroSocialCLS.cs",
+              "RelativeDocumentMoniker": "..\\Capa Entidad\\RegistroSocialCLS.cs",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\RegistroSocialCLS.cs",
+              "RelativeToolTip": "..\\Capa Entidad\\RegistroSocialCLS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T22:24:43.462Z",
+              "WhenOpened": "2024-11-19T02:51:51.829Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "DatosGeneralesCLS.cs",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\DatosGeneralesCLS.cs",
+              "RelativeDocumentMoniker": "..\\Capa Entidad\\DatosGeneralesCLS.cs",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\DatosGeneralesCLS.cs",
+              "RelativeToolTip": "..\\Capa Entidad\\DatosGeneralesCLS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:49:47.155Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DatosGeneralesDAL.cs",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Datos\\DatosGeneralesDAL.cs",
+              "RelativeDocumentMoniker": "..\\Capa Datos\\DatosGeneralesDAL.cs",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Datos\\DatosGeneralesDAL.cs",
+              "RelativeToolTip": "..\\Capa Datos\\DatosGeneralesDAL.cs",
+              "ViewState": "AgIAAO8AAAAAAAAAAAAYwAYBAAB4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:27:58.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "datosGenerales.js",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\wwwroot\\js\\Scripts\\datosGenerales.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\Scripts\\datosGenerales.js",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\wwwroot\\js\\Scripts\\datosGenerales.js",
+              "RelativeToolTip": "wwwroot\\js\\Scripts\\datosGenerales.js",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAYwGcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-11-19T02:01:16.898Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DatosGeneralesPacienteCLS.cs",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\DatosGeneralesPacienteCLS.cs",
+              "RelativeDocumentMoniker": "..\\Capa Entidad\\DatosGeneralesPacienteCLS.cs",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\DatosGeneralesPacienteCLS.cs",
+              "RelativeToolTip": "..\\Capa Entidad\\DatosGeneralesPacienteCLS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:51:45.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegistroSocialDAL.cs",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Datos\\RegistroSocialDAL.cs",
+              "RelativeDocumentMoniker": "..\\Capa Datos\\RegistroSocialDAL.cs",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Datos\\RegistroSocialDAL.cs",
+              "RelativeToolTip": "..\\Capa Datos\\RegistroSocialDAL.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAkwDcAAAB4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:52:00.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ResponsableCLS.cs",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\ResponsableCLS.cs",
+              "RelativeDocumentMoniker": "..\\Capa Entidad\\ResponsableCLS.cs",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\ResponsableCLS.cs",
+              "RelativeToolTip": "..\\Capa Entidad\\ResponsableCLS.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:50:06.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DatosGeneralesBL.cs",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Negocio\\DatosGeneralesBL.cs",
+              "RelativeDocumentMoniker": "..\\Capa Negocio\\DatosGeneralesBL.cs",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Negocio\\DatosGeneralesBL.cs",
+              "RelativeToolTip": "..\\Capa Negocio\\DatosGeneralesBL.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAArwBkAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:27:53.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DatosGeneralesController.cs",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Controllers\\DatosGeneralesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DatosGeneralesController.cs",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Controllers\\DatosGeneralesController.cs",
+              "RelativeToolTip": "Controllers\\DatosGeneralesController.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwCwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T02:04:57.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Views\\DatosGenerales\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\DatosGenerales\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Views\\DatosGenerales\\Index.cshtml",
+              "RelativeToolTip": "Views\\DatosGenerales\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-19T01:45:08.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Views\\RegistroSocial\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\RegistroSocial\\Index.cshtml",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Views\\RegistroSocial\\Index.cshtml",
+              "RelativeToolTip": "Views\\RegistroSocial\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-19T01:44:57.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RegistroSocial.cshtml",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Views\\RegistroSocial\\RegistroSocial.cshtml",
+              "RelativeDocumentMoniker": "Views\\RegistroSocial\\RegistroSocial.cshtml",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Views\\RegistroSocial\\RegistroSocial.cshtml",
+              "RelativeToolTip": "Views\\RegistroSocial\\RegistroSocial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-19T01:44:52.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Busqueda.cshtml",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Views\\DatosGenerales\\Busqueda.cshtml",
+              "RelativeDocumentMoniker": "Views\\DatosGenerales\\Busqueda.cshtml",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Views\\DatosGenerales\\Busqueda.cshtml",
+              "RelativeToolTip": "Views\\DatosGenerales\\Busqueda.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-19T01:44:45.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RegistroSocialController.cs",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Controllers\\RegistroSocialController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RegistroSocialController.cs",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Controllers\\RegistroSocialController.cs",
+              "RelativeToolTip": "Controllers\\RegistroSocialController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T01:44:08.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CadenaDAL.cs",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Datos\\CadenaDAL.cs",
+              "RelativeDocumentMoniker": "..\\Capa Datos\\CadenaDAL.cs",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Datos\\CadenaDAL.cs",
+              "RelativeToolTip": "..\\Capa Datos\\CadenaDAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-19T01:37:15.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAB/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-19T01:36:35.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ServicioCLS.cs",
+              "DocumentMoniker": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Entidad\\ServicioCLS.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\HDHVCA\\Documents\\git\\Capa Entidad\\ServicioCLS.cs",
+              "ToolTip": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Entidad\\ServicioCLS.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\HDHVCA\\Documents\\git\\Capa Entidad\\ServicioCLS.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T22:45:28.126Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAcwBQAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T22:39:38.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ServicioController.cs",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Controllers\\ServicioController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ServicioController.cs",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Controllers\\ServicioController.cs",
+              "RelativeToolTip": "Controllers\\ServicioController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAwwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T22:30:47.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "DatosGeneralesBL.cs",
+              "DocumentMoniker": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Negocio\\DatosGeneralesBL.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\HDHVCA\\Documents\\git\\Capa Negocio\\DatosGeneralesBL.cs",
+              "ToolTip": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Negocio\\DatosGeneralesBL.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\HDHVCA\\Documents\\git\\Capa Negocio\\DatosGeneralesBL.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T22:25:47.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ServiciosBL.cs",
+              "DocumentMoniker": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Negocio\\ServiciosBL.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\HDHVCA\\Documents\\git\\Capa Negocio\\ServiciosBL.cs",
+              "ToolTip": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Negocio\\ServiciosBL.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\HDHVCA\\Documents\\git\\Capa Negocio\\ServiciosBL.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwBwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T22:25:10.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ServicioContextDAL.cs",
+              "DocumentMoniker": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Datos\\ServicioContextDAL.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\HDHVCA\\Documents\\git\\Capa Datos\\ServicioContextDAL.cs",
+              "ToolTip": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Datos\\ServicioContextDAL.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\HDHVCA\\Documents\\git\\Capa Datos\\ServicioContextDAL.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAwwBAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-18T22:24:43.462Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "PacienteController.cs",
-              "DocumentMoniker": "C:\\Users\\HDHVCA\\Documents\\git\\registroSocial8\\Controllers\\PacienteController.cs",
+              "DocumentMoniker": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Controllers\\PacienteController.cs",
               "RelativeDocumentMoniker": "Controllers\\PacienteController.cs",
-              "ToolTip": "C:\\Users\\HDHVCA\\Documents\\git\\registroSocial8\\Controllers\\PacienteController.cs",
+              "ToolTip": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\registroSocial8\\Controllers\\PacienteController.cs",
               "RelativeToolTip": "Controllers\\PacienteController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwBIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T22:34:44.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T22:34:44.042Z"
             }
           ]
         }

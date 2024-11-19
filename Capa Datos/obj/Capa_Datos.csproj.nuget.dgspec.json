@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HDHVCA\\Documents\\git\\Capa Datos\\Capa_Datos.csproj": {}
+    "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Datos\\Capa_Datos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HDHVCA\\Documents\\git\\Capa Datos\\Capa_Datos.csproj": {
+    "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Datos\\Capa_Datos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Datos\\Capa_Datos.csproj",
+        "projectUniqueName": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Datos\\Capa_Datos.csproj",
         "projectName": "Capa_Datos",
-        "projectPath": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Datos\\Capa_Datos.csproj",
-        "packagesPath": "C:\\Users\\HDHVCA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Datos\\obj\\",
+        "projectPath": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Datos\\Capa_Datos.csproj",
+        "packagesPath": "C:\\Users\\ALAN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Datos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\HDHVCA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ALAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,8 +32,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\HDHVCA\\Documents\\git\\Capa Entidad\\Capa_Entidad.csproj": {
-                "projectPath": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Entidad\\Capa_Entidad.csproj"
+              "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\Capa_Entidad.csproj": {
+                "projectPath": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\Capa_Entidad.csproj"
               }
             }
           }
@@ -97,20 +97,20 @@
         }
       }
     },
-    "C:\\Users\\HDHVCA\\Documents\\git\\Capa Entidad\\Capa_Entidad.csproj": {
+    "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\Capa_Entidad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Entidad\\Capa_Entidad.csproj",
+        "projectUniqueName": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\Capa_Entidad.csproj",
         "projectName": "Capa_Entidad",
-        "projectPath": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Entidad\\Capa_Entidad.csproj",
-        "packagesPath": "C:\\Users\\HDHVCA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HDHVCA\\Documents\\git\\Capa Entidad\\obj\\",
+        "projectPath": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\Capa_Entidad.csproj",
+        "packagesPath": "C:\\Users\\ALAN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\Capa Entidad\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\HDHVCA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ALAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

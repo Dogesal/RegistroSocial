@@ -11,8 +11,8 @@ namespace Capa_Entidad
     {
         public int IDRegistroSocial { get; set; }
         public int IDPaciente { get; set; }
-        public DateTime FechaAplicacion { get; set; }
-        public DateTime FechaIngreso { get; set; }
+        public string FechaAplicacion { get; set; }
+        public string FechaIngreso { get; set; }
         public string Servicio { get; set; }
         public string Cama { get; set; }
         public string ModalidadIngreso { get; set; }

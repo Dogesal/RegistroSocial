@@ -9,81 +9,81 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = registroSocial8
 build_property.RootNamespace = registroSocial8
-build_property.ProjectDir = C:\Users\HDHVCA\Documents\git\registroSocial8\
+build_property.ProjectDir = C:\Users\ALAN\Documents\git\RegistroSocial\RegistroSocial\registroSocial8\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\HDHVCA\Documents\git\registroSocial8
+build_property.MSBuildProjectDirectory = C:\Users\ALAN\Documents\git\RegistroSocial\RegistroSocial\registroSocial8
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/DatosGenerales/Busqueda.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/DatosGenerales/Busqueda.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NHZW5lcmFsZXNcQnVzcXVlZGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/DatosGenerales/Index.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/DatosGenerales/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NHZW5lcmFsZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/DatosGenerales/Registro.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/DatosGenerales/Registro.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGF0b3NHZW5lcmFsZXNcUmVnaXN0cm8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/Home/Index.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/Home/Privacy.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/Paciente/DatosPaciente.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/Paciente/DatosPaciente.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFjaWVudGVcRGF0b3NQYWNpZW50ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/RegistroSocial/Index.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/RegistroSocial/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cm9Tb2NpYWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/RegistroSocial/RegistroSocial.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/RegistroSocial/RegistroSocial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cm9Tb2NpYWxcUmVnaXN0cm9Tb2NpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/RegistroSocial/RegistroSocialEdit.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/RegistroSocial/RegistroSocialEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cm9Tb2NpYWxcUmVnaXN0cm9Tb2NpYWxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/RegistroSocial/RegistroSocialVista.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/RegistroSocial/RegistroSocialVista.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0cm9Tb2NpYWxcUmVnaXN0cm9Tb2NpYWxWaXN0YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/Responsable/DatosResponsable.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/Responsable/DatosResponsable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVzcG9uc2FibGVcRGF0b3NSZXNwb25zYWJsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/Shared/Error.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/Usuario/Index.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/Usuario/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/_ViewImports.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/_ViewStart.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/HDHVCA/Documents/git/registroSocial8/Views/Shared/_Layout.cshtml]
+[C:/Users/ALAN/Documents/git/RegistroSocial/RegistroSocial/registroSocial8/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-k2qoiqv7io

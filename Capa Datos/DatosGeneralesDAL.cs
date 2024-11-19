@@ -41,9 +41,14 @@ namespace Capa_Datos
                                 // Asignación de columnas a las propiedades de RegistroSocialCLS
                                 registro.IDRegistroSocial = drd["ID_datos_generales"] != DBNull.Value ? (int)drd["ID_datos_generales"] : 0;
                                 registro.IDPaciente = drd["ID_paciente"] != DBNull.Value ? (int)drd["ID_paciente"] : 0;
-                                registro.FechaAplicacion = drd["fecha_aplicacion"] != DBNull.Value ? (DateTime)drd["fecha_aplicacion"] : DateTime.MinValue;
-                                registro.FechaIngreso = drd["fecha_ingreso"] != DBNull.Value ? (DateTime)drd["fecha_ingreso"] : DateTime.MinValue;
-                                registro.Servicio = drd["servicio"] != DBNull.Value ? drd["servicio"].ToString() : "";
+                                registro.FechaAplicacion = drd["fecha_aplicacion"] != DBNull.Value
+                                  ? ((DateTime)drd["fecha_aplicacion"]).ToString("dd-MM-yyyy")
+                                  : DateTime.MinValue.ToString("dd-MM-yyyy");
+
+                                registro.FechaIngreso = drd["fecha_ingreso"] != DBNull.Value
+                                    ? ((DateTime)drd["fecha_ingreso"]).ToString("dd-MM-yyyy")
+                                    : DateTime.MinValue.ToString("dd-MM-yyyy");
+                                //registro.Servicio = drd["servicio"] != DBNull.Value ? drd["servicio"].ToString() : "";
                                 registro.Cama = drd["cama"] != DBNull.Value ? drd["cama"].ToString() : "";
                                 registro.ModalidadIngreso = drd["modalidad_ingreso"] != DBNull.Value ? drd["modalidad_ingreso"].ToString() : "";
                                 registro.TipoFamilia = drd["tipo_familia"] != DBNull.Value ? drd["tipo_familia"].ToString() : "";
@@ -99,9 +104,14 @@ namespace Capa_Datos
                                 registro.nombrePaciente = drd["nombre_paciente"] != DBNull.Value ? drd["nombre_paciente"].ToString() : "";
                                 registro.IDRegistroSocial = drd["ID_datos_generales"] != DBNull.Value ? (int)drd["ID_datos_generales"] : 0;
                                 registro.IDPaciente = drd["ID_paciente"] != DBNull.Value ? (int)drd["ID_paciente"] : 0;
-                                registro.FechaAplicacion = drd["fecha_aplicacion"] != DBNull.Value ? (DateTime)drd["fecha_aplicacion"] : DateTime.MinValue;
-                                registro.FechaIngreso = drd["fecha_ingreso"] != DBNull.Value ? (DateTime)drd["fecha_ingreso"] : DateTime.MinValue;
-                                registro.Servicio = drd["servicio"] != DBNull.Value ? drd["servicio"].ToString() : "";
+                                registro.FechaAplicacion = drd["fecha_aplicacion"] != DBNull.Value
+                                 ? ((DateTime)drd["fecha_aplicacion"]).ToString("dd-MM-yyyy")
+                                 : DateTime.MinValue.ToString("dd-MM-yyyy");
+
+                                registro.FechaIngreso = drd["fecha_ingreso"] != DBNull.Value
+                                    ? ((DateTime)drd["fecha_ingreso"]).ToString("dd-MM-yyyy")
+                                    : DateTime.MinValue.ToString("dd-MM-yyyy");
+                                //registro.Servicio = drd["servicio"] != DBNull.Value ? drd["servicio"].ToString() : "";
                                 registro.Cama = drd["cama"] != DBNull.Value ? drd["cama"].ToString() : "";
                                 registro.ModalidadIngreso = drd["modalidad_ingreso"] != DBNull.Value ? drd["modalidad_ingreso"].ToString() : "";
                                 registro.TipoFamilia = drd["tipo_familia"] != DBNull.Value ? drd["tipo_familia"].ToString() : "";
@@ -243,9 +253,14 @@ namespace Capa_Datos
                                 registro.nombrePaciente = drd["nombre_paciente"] != DBNull.Value ? drd["nombre_paciente"].ToString() : "";
                                 registro.IDRegistroSocial = drd["ID_datos_generales"] != DBNull.Value ? (int)drd["ID_datos_generales"] : 0;
                                 registro.IDPaciente = drd["ID_paciente"] != DBNull.Value ? (int)drd["ID_paciente"] : 0;
-                                registro.FechaAplicacion = drd["fecha_aplicacion"] != DBNull.Value ? (DateTime)drd["fecha_aplicacion"] : DateTime.MinValue;
-                                registro.FechaIngreso = drd["fecha_ingreso"] != DBNull.Value ? (DateTime)drd["fecha_ingreso"] : DateTime.MinValue;
-                                registro.Servicio = drd["servicio"] != DBNull.Value ? drd["servicio"].ToString() : "";
+                                registro.FechaAplicacion = drd["fecha_aplicacion"] != DBNull.Value
+                                 ? ((DateTime)drd["fecha_aplicacion"]).ToString("dd-MM-yyyy")
+                                 : DateTime.MinValue.ToString("dd-MM-yyyy");
+
+                                registro.FechaIngreso = drd["fecha_ingreso"] != DBNull.Value
+                                    ? ((DateTime)drd["fecha_ingreso"]).ToString("dd-MM-yyyy")
+                                    : DateTime.MinValue.ToString("dd-MM-yyyy");
+                                //registro.Servicio = drd["servicio"] != DBNull.Value ? drd["servicio"].ToString() : "";
                                 registro.Cama = drd["cama"] != DBNull.Value ? drd["cama"].ToString() : "";
                                 registro.ModalidadIngreso = drd["modalidad_ingreso"] != DBNull.Value ? drd["modalidad_ingreso"].ToString() : "";
                                 registro.TipoFamilia = drd["tipo_familia"] != DBNull.Value ? drd["tipo_familia"].ToString() : "";

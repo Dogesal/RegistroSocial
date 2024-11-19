@@ -101,7 +101,7 @@ function listarRegistros() {
         editar: true,
         eliminar: true,
         lupa: true,
-        propiedadID:"IDRegistroSocial"
+        propiedadID:"idRegistroSocial"
     }, {    
 
             buscar: true,
