@@ -58,7 +58,7 @@ function Eliminar(id) {
                   .then(data => {
                         if (data === 1) {
                             console.log(data)
-                            return fetch(`/RegistroSocial/eliminarRegistroSocial/${id}`);
+                            return fetch(`/RegistroSocial/eliminarRegistroSocial/?id=${id}`);
                         } else {
                             // Invalid credentials
                             Swal.fire("Error", "Usuario o contraseña incorrectos.", "error");

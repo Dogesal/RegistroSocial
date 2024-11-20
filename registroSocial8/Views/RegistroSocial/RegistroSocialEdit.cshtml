@@ -17,7 +17,14 @@
             <h3>FICHA DE ENTREVISTA SOCIAL</h3>
         </div>
     </div>
-
+    <div class="row container">
+        <div class="col-md-3">
+            <label>ESTADO:</label>
+            <select type="text" id="estado" name="estado" class="form-control">
+                <option value="">Seleccione un estado</option>
+            </select>
+        </div>
+    </div>
     <form class="mt-3 " style="width:100%; box-sizing:content-box " method="post">
         <!-- Datos Generales -->
         <h5 class="mt-4">Datos Generales</h5>
@@ -32,7 +39,9 @@
             </div>
             <div class="col-md-3">
                 <label>Servicio:</label>
-                <input type="text" id="servicio" class="form-control" />
+                <select type="text" class="form-control" id="servicio"  name="servicio">
+                    <option value="">Seleccione un servicio</option>
+                </select>
             </div>
             <div class="col-md-3">
                 <label>Cama:</label>
@@ -175,7 +184,8 @@
             console.log(data)
             document.getElementById('fechaIngreso').value = convertirFecha(data.datos.fechaIngreso);
             document.getElementById('fechaAplicacion').value = convertirFecha(data. datos.fechaAplicacion);
-            document.getElementById('servicio').value = data.datos.servicio;
+            document.getElementById('servicio').value = data.servicio.iD_servicio;
+            document.getElementById('estado').value = data.estado.iD_estado;
             document.getElementById('cama').value = data.datos.cama;
             document.getElementById('accionesRealizadas').value = data.datos.accionesRealizadas;
             document.getElementById('observacionesTipoFamilia').value = data.datos.observacionesFamilia;
@@ -273,7 +283,6 @@
         const datosGenerales = {
             FechaAplicacion: document.getElementById('fechaAplicacion').value,
             FechaIngreso: document.getElementById('fechaIngreso').value,
-            Servicio: document.getElementById('servicio').value,
             Cama: document.getElementById('cama').value,
             ModalidadIngreso: document.getElementById('modalidadIngreso').value,
             TipoFamilia: document.getElementById('tipoFamilia').value,
@@ -309,15 +318,20 @@
             GradoInstruccion: document.getElementById(`gradoInstruccionResponsable${index}`).value
         }));
 
-        // const datosServicio = ["activo"]
-
+        // Collect servicio 
+        const datoServicio ={
+         ID_servicio : document.getElementById('servicio').value
+        }
+        const datoEstado ={
+         ID_estado : document.getElementById('estado').value
+        }
         // Create main data object
         const datos = {
             paciente: datosPaciente,
             datos: datosGenerales,
             responsables: responsables,
-            servicio: ,
-            estado:
+            servicio: datoServicio ,
+            estado: datoEstado
         };
 
         try {
@@ -401,5 +415,62 @@
     }
 
     window.onload = cargarDatos;
+
+</script>
+<script>
+    // Usamos Fetch API para obtener los servicios de la API
+    fetch('/Servicio/listarServicios')
+    .then(response => response.json()) // Convertimos la respuesta a JSON
+    .then(data => {
+
+        // Accedemos al select usando el atributo name
+        const select = document.getElementsByName('servicio')[0]; // Obtenemos el primer elemento con el name 'servicio'
+
+        // Limpiamos las opciones anteriores (si es necesario)
+        select.innerHTML = '';
+
+        // Añadimos la opción por defecto
+        const optionDefault = new Option('Seleccione un servicio', '');
+        select.appendChild(optionDefault); // Añadimos la opción por defecto
+
+        // Iteramos sobre los servicios obtenidos de la API y añadimos opciones
+        data.forEach(servicio => {
+            console.log(servicio.nombre); // Verificamos cada nombre de servicio
+            const option = new Option( servicio.nombre,servicio.iD_servicio); // Creamos la opción con texto y valor
+            select.appendChild(option);  // Añadimos la opción al select
+        });
+    })
+    .catch(error => {
+        console.error('Error al cargar los servicios: ', error);
+    });
+
+</script>
+
+<script>
+    // Usamos Fetch API para obtener los servicios de la API
+    fetch('/Estado/listareEstados')
+    .then(response => response.json()) // Convertimos la respuesta a JSON
+    .then(data => {
+
+        // Accedemos al select usando el atributo name
+        const select = document.getElementsByName('estado')[0]; // Obtenemos el primer elemento con el name 'servicio'
+
+        // Limpiamos las opciones anteriores (si es necesario)
+        select.innerHTML = '';
+
+        // Añadimos la opción por defecto
+        const optionDefault = new Option('Seleccione un estado', '');
+        select.appendChild(optionDefault); // Añadimos la opción por defecto
+
+        // Iteramos sobre los servicios obtenidos de la API y añadimos opciones
+        data.forEach(estado => {
+            console.log(estado.nombre); // Verificamos cada nombre de servicio
+            const option = new Option(estado.nombre,estado.iD_estado ); // Creamos la opción con texto y valor
+            select.appendChild(option);  // Añadimos la opción al select
+        });
+    })
+    .catch(error => {
+        console.error('Error al cargar los estados: ', error);
+    });
 
 </script>

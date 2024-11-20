@@ -32,7 +32,7 @@ namespace Capa_Datos
 
             RegistroSocialCLS registroSocial = new RegistroSocialCLS(); ;
 
-            
+       
             using (SqlConnection cn = new SqlConnection(cadenaConexion))
             {
                 try
@@ -49,15 +49,15 @@ namespace Capa_Datos
                         
                         if (drd != null)
                         {
-                            
-
+                            ServicioCLS servicio = new ServicioCLS();
+                            EstadoCLS estado = new EstadoCLS();
                             while (drd.Read())
                             {
 
 
                                 // Asignación de columnas a las propiedades de RegistroSocialCLS
                                 DatosGeneralesCLS registro = new DatosGeneralesCLS();
-
+                                
 
                                 registro.IDRegistroSocial = drd["ID_datos_generales"] != DBNull.Value ? (int)drd["ID_datos_generales"] : 0;
                                 registro.IDPaciente = drd["ID_paciente"] != DBNull.Value ? (int)drd["ID_paciente"] : 0;
@@ -68,7 +68,24 @@ namespace Capa_Datos
                                 registro.FechaIngreso = drd["fecha_ingreso"] != DBNull.Value
                                     ? ((DateTime)drd["fecha_ingreso"]).ToString("dd-MM-yyyy")
                                     : DateTime.MinValue.ToString("dd-MM-yyyy");
-                                //registro.Servicio = drd["servicio"] != DBNull.Value ? drd["servicio"].ToString() : "";
+
+
+                                try
+                                {
+                                    servicio = _contextServicio.servicios.Find(drd["ID_servicio"]);
+                                    registroSocial.servicio = servicio;
+
+                                    estado = _contextEstado.estado.Find(drd["ID_estado"]);
+                                    registroSocial.estado = estado;
+                                }
+                                catch (Exception e)
+                                {
+                                    
+                                    throw new Exception(e.Message);
+                                }
+
+                                
+
                                 registro.Cama = drd["cama"] != DBNull.Value ? drd["cama"].ToString() : "";
                                 registro.ModalidadIngreso = drd["modalidad_ingreso"] != DBNull.Value ? drd["modalidad_ingreso"].ToString() : "";
                                 registro.TipoFamilia = drd["tipo_familia"] != DBNull.Value ? drd["tipo_familia"].ToString() : "";
@@ -180,7 +197,7 @@ namespace Capa_Datos
 
                                 // Asignación de columnas a las propiedades de RegistroSocialCLS
 
-                                registro.IDPaciente = drd["ID_responsable"] != DBNull.Value ? (int)drd["ID_responsable"] : 0;
+                                registro.IDResponsable = drd["ID_responsable"] != DBNull.Value ? (int)drd["ID_responsable"] : 0;
                                 registro.IDPaciente = drd["ID_paciente"] != DBNull.Value ? (int)drd["ID_paciente"] : 0;
                                 registro.NombreResponsable = drd["nombre_responsable"] != DBNull.Value ? drd["nombre_responsable"].ToString() : "";
                                 registro.Edad = drd["edad"] != DBNull.Value ? (int)drd["edad"] : 0;
@@ -423,6 +440,12 @@ namespace Capa_Datos
             int filas = 0;
             StringBuilder errores = new StringBuilder();
 
+            //try {
+
+            //    ServicioCLS servicio = _contextServicio.servicios.FirstOrDefault(e => e.nombre == registroSocialR.servicio.nombre);
+
+            //}
+
             using (SqlConnection cn = new SqlConnection(cadenaConexion))
             {
                 cn.Open();
@@ -465,7 +488,8 @@ namespace Capa_Datos
                         cmd.Parameters.AddWithValue("@id", id);
                         cmd.Parameters.AddWithValue("@fecha_aplicacion", registroSocialR.datos.FechaAplicacion);
                         cmd.Parameters.AddWithValue("@fecha_ingreso", registroSocialR.datos.FechaIngreso);
-                        cmd.Parameters.AddWithValue("@servicio", registroSocialR.datos.Servicio);
+                        cmd.Parameters.AddWithValue("@ID_servicio", registroSocialR.servicio.ID_servicio);
+                        cmd.Parameters.AddWithValue("@ID_estado", registroSocialR.estado.ID_estado);
                         cmd.Parameters.AddWithValue("@cama", registroSocialR.datos.Cama);
                         cmd.Parameters.AddWithValue("@modalidad_ingreso", registroSocialR.datos.ModalidadIngreso);
                         cmd.Parameters.AddWithValue("@tipo_familia", registroSocialR.datos.TipoFamilia);

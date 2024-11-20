@@ -81,7 +81,7 @@ function generarTabla(objPintar, res) {
             let valor = fila[propiedad];
 
             if (valor !== undefined) {
-                contenido += "<td>" + (esFormatoFechaJson(valor) ? convertirFecha(valor) : valor) + "</td>";
+                contenido += "<td class='date'>" + (esFormatoFechaJson(valor) ? convertirFecha(valor) : valor) + "</td>";
             } else {
                 contenido += "<td> - </td>"; // Valor por defecto en caso de undefined
             }

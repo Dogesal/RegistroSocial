@@ -4075,23 +4075,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HDHVCA\\.nuget\\packages\\": {},
+    "C:\\Users\\ALAN\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HDHVCA\\Documents\\git\\RegistroSocial\\Capa Negocio\\Capa_Negocio.csproj",
+      "projectUniqueName": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\RegistroSocial\\Capa Negocio\\Capa_Negocio.csproj",
       "projectName": "Capa_Negocio",
-      "projectPath": "C:\\Users\\HDHVCA\\Documents\\git\\RegistroSocial\\Capa Negocio\\Capa_Negocio.csproj",
-      "packagesPath": "C:\\Users\\HDHVCA\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HDHVCA\\Documents\\git\\RegistroSocial\\Capa Negocio\\obj\\",
+      "projectPath": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\RegistroSocial\\Capa Negocio\\Capa_Negocio.csproj",
+      "packagesPath": "C:\\Users\\ALAN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\RegistroSocial\\Capa Negocio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\HDHVCA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ALAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4106,11 +4106,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\HDHVCA\\Documents\\git\\RegistroSocial\\Capa Datos\\Capa_Datos.csproj": {
-              "projectPath": "C:\\Users\\HDHVCA\\Documents\\git\\RegistroSocial\\Capa Datos\\Capa_Datos.csproj"
+            "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\RegistroSocial\\Capa Datos\\Capa_Datos.csproj": {
+              "projectPath": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\RegistroSocial\\Capa Datos\\Capa_Datos.csproj"
             },
-            "C:\\Users\\HDHVCA\\Documents\\git\\RegistroSocial\\Capa Entidad\\Capa_Entidad.csproj": {
-              "projectPath": "C:\\Users\\HDHVCA\\Documents\\git\\RegistroSocial\\Capa Entidad\\Capa_Entidad.csproj"
+            "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\RegistroSocial\\Capa Entidad\\Capa_Entidad.csproj": {
+              "projectPath": "C:\\Users\\ALAN\\Documents\\git\\RegistroSocial\\RegistroSocial\\RegistroSocial\\Capa Entidad\\Capa_Entidad.csproj"
             }
           }
         }
@@ -4176,34 +4176,10 @@
   },
   "logs": [
     {
-      "code": "NU1903",
+      "code": "NU1900",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"Microsoft.Extensions.Caching.Memory\" 8.0.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-qj66-m88j-hmgj",
-      "libraryId": "Microsoft.Extensions.Caching.Memory",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"System.Text.Json\" 8.0.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-8g4q-xg66-9fp4",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    },
-    {
-      "code": "NU1903",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"System.Text.Json\" 8.0.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w",
-      "libraryId": "System.Text.Json",
-      "targetGraphs": [
-        "net8.0"
-      ]
+      "message": "Error al obtener los datos de vulnerabilidad del paquete: No se puede cargar el índice de servicio del origen https://api.nuget.org/v3/index.json."
     },
     {
       "code": "NU1701",

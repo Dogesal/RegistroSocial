@@ -12,7 +12,7 @@ namespace Capa_Datos
 
         public CadenaDAL(){
 
-            cadenaConexion = "server=HDHVCA;database=registroSocial;Integrated Security=true;TrustServerCertificate=True";
+            cadenaConexion = "server=DESKTOP-D2BMBQK\\SQLEXPRESS;database=registroSocial;Integrated Security=true;TrustServerCertificate=True";
         }
 
 
